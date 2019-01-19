@@ -1,0 +1,1 @@
+# vMCShop-Standard
