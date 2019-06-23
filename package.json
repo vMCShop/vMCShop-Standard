@@ -1,0 +1,49 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "yarn run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "yarn run development -- --watch",
+        "watch-poll": "yarn run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "yarn run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/preset-react": "^7.0.0",
+        "axios": "^0.19",
+        "browser-sync": "^2.26.7",
+        "browser-sync-webpack-plugin": "2.0.1",
+        "cross-env": "^5.1",
+        "laravel-mix": "^4.0.7",
+        "lodash.debounce": "^4.0.8",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "resolve-url-loader": "^2.3.1"
+    },
+    "dependencies": {
+        "@bit/styled-components.polished.color.rgba": "^3.2.0",
+        "@dr-kobros/react-webfont-loader": "^8.0.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.19",
+        "@fortawesome/free-solid-svg-icons": "^5.9.0",
+        "@fortawesome/react-fontawesome": "^0.1.4",
+        "normalize.css": "^8.0.1",
+        "react-hamburgers": "^1.0.0",
+        "react-helmet": "^5.2.1",
+        "react-ink": "^6.4.0",
+        "react-pose": "^4.0.8",
+        "react-ripples": "^2.1.1",
+        "react-router-dom": "^5.0.1",
+        "styled-components": "^4.3.1"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    }
+}
