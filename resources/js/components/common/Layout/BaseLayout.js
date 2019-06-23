@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import {useTranslation} from "react-i18next";
 import { createGlobalStyle } from 'styled-components';
 import 'normalize.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,6 +75,8 @@ const StyledMain = styled(Card)`
 `;
 
 const BaseLayout = ({ children, title }) => {
+    const { t } = useTranslation();
+
     return (
         <>
             <Helmet>
@@ -84,11 +87,11 @@ const BaseLayout = ({ children, title }) => {
             <Navigation>
                 <NavigationLink to="/">
                     <FontAwesomeIcon icon={faHome} size="2x" />
-                    <span>Strona Główna</span>
+                    <span>{t('navigation:homepage')}</span>
                 </NavigationLink>
                 <NavigationLink to="#" external>
                     <FontAwesomeIcon icon={faShoppingBasket} size="2x" />
-                    <span>Sklep</span>
+                    <span>{t('navigation:store')}</span>
                 </NavigationLink>
             </Navigation>
 

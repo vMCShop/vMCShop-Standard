@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useTranslation} from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,19 +16,18 @@ const StyledNewsCard = styled(Card)`
         display: flex;
         flex-direction: row;
         
-        height: 230px;
+        height: 250px;
     `}
 `;
 
 const StyledNewsCardImage = styled.img`
     width: 100%;
     
-    
     border-top-left-radius: ${theme.border_radius};
     border-top-right-radius: ${theme.border_radius};
     
     ${media.laptop`
-        width: auto;
+        width: 250px;
         
         border-top-left-radius: ${theme.border_radius};
         border-top-right-radius: 0;
@@ -84,19 +84,21 @@ const StyledNewsCardDate = styled.p`
 `;
 
 const NewsCard = () => {
+    const { t } = useTranslation();
+
     return (
         <StyledNewsCard as="article">
             <StyledNewsCardImage src="http://standard.vmcshop.net/images/news.png" />
             <StyledNewsCardContentWrapper>
                 <StyledNewsCardContent>
-                    <StyledNewsCardTitle>Hello World!</StyledNewsCardTitle>
+                    <StyledNewsCardTitle>HelloWorld!</StyledNewsCardTitle>
                     <p>
                         Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est, at interdum erat pretium consequat.
                     </p>
                 </StyledNewsCardContent>
                 <StyledNewsCardFooter>
                     <StyledNewsCardDate> 03 maj 2019 o 15:32  Admin</StyledNewsCardDate>
-                    <Button>Czytaj dalej...</Button>
+                    <Button>{t('homepage:news.readMore')}</Button>
                 </StyledNewsCardFooter>
             </StyledNewsCardContentWrapper>
         </StyledNewsCard>
@@ -108,9 +110,11 @@ const StyledNewsSection = styled.section`
 `;
 
 const NewsSection = () => {
+    const { t } = useTranslation();
+
     return (
         <StyledNewsSection>
-            <h2><FontAwesomeIcon icon={faNewspaper} /> Aktualności</h2>
+            <h2><FontAwesomeIcon icon={faNewspaper} /> {t('homepage:sectionHeaders.news')}</h2>
             <NewsCard />
         </StyledNewsSection>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faServer } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,10 +26,12 @@ const StyledServerStatusCard = styled(Card)`
 `;
 
 const ServerStatusCard = ({ status }) => {
+    const { t } = useTranslation();
+
     if (status.online) {
         return (
             <StyledServerStatusCard>
-                <h3>Serwer {status.name}</h3>
+                <h3>{t('common:server.name', {name: status.name})}</h3>
                 <Badge color={colors.primary}>{status.address}</Badge>
                 <ProgressBar color={colors.success} value={status.players} max={status.maxPlayers} />
                 <Badge color={colors.success}>Online</Badge>
@@ -39,7 +42,7 @@ const ServerStatusCard = ({ status }) => {
     } else {
         return (
             <StyledServerStatusCard>
-                <h3>Serwer {status.name}</h3>
+                <h3>{t('common:server.name', {name: status.name})}</h3>
                 <Badge color={colors.primary}>{status.address}</Badge>
                 <ProgressBar color={colors.danger} value={100} max={100} />
                 <Badge color={colors.danger}>Offline</Badge>
@@ -53,9 +56,11 @@ const StyledServersSidebarSection = styled.section`
 `;
 
 const ServersSidebarSection = ({ serverStatuses }) => {
+    const { t } = useTranslation();
+
     return (
         <StyledServersSidebarSection>
-            <h2><FontAwesomeIcon icon={faServer} /> Status Serwerów</h2>
+            <h2><FontAwesomeIcon icon={faServer} /> {t('homepage:sectionHeaders.serverStatus')}</h2>
 
             {serverStatuses.map(serverStatus => (
                 <ServerStatusCard status={serverStatus} />
