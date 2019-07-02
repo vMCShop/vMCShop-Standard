@@ -5,7 +5,8 @@ import {useTranslation} from "react-i18next";
 import { createGlobalStyle } from 'styled-components';
 import 'normalize.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShoppingBasket, faTrophy, faGavel, faListOl, fa } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
 import { Navigation, NavigationLink } from '@/components/common/Navigation';
 import { Container } from '@/components/common/Container';
@@ -87,11 +88,27 @@ const BaseLayout = ({ children, title }) => {
             <Navigation>
                 <NavigationLink to="/">
                     <FontAwesomeIcon icon={faHome} size="2x" />
-                    <span>{t('navigation:homepage')}</span>
+                    <span style={{fontWeight: "bold"}}>{t('navigation:homepage')}</span>
                 </NavigationLink>
                 <NavigationLink to="#" external>
                     <FontAwesomeIcon icon={faShoppingBasket} size="2x" />
-                    <span>{t('navigation:store')}</span>
+                    <span style={{fontWeight: "bold"}}>{t('navigation:store')}</span>
+                </NavigationLink>
+                <NavigationLink to="#" external>
+                    <FontAwesomeIcon icon={faTrophy} size="2x" />
+                    <span style={{fontWeight: "bold"}}>{t('navigation:top')}</span>
+                </NavigationLink>
+                <NavigationLink to="#" external>
+                    <FontAwesomeIcon icon={faGavel} size="2x" />
+                    <span style={{fontWeight: "bold"}}>{t('navigation:banList')}</span>
+                </NavigationLink>
+                <NavigationLink to="#" external>
+                    <FontAwesomeIcon icon={faListOl} size="2x" />
+                    <span style={{fontWeight: "bold"}}>{t('navigation:regulations')}</span>
+                </NavigationLink>
+                <NavigationLink to="#" external>
+                    <FontAwesomeIcon icon={faFacebookSquare} size="2x" />.
+                    <span style={{fontWeight: "bold"}}>Facebook</span>
                 </NavigationLink>
             </Navigation>
 
