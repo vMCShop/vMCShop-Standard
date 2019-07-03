@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
-
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
-
 import { theme, media, colors } from '@/utils';
+import newsImage from '@/../images/news.png';
 
 const StyledNewsCard = styled(Card)`
     padding: 0;
@@ -88,7 +87,7 @@ const NewsCard = () => {
 
     return (
         <StyledNewsCard as="article">
-            <StyledNewsCardImage src="http://standard.vmcshop.net/images/news.png" />
+            <StyledNewsCardImage src={newsImage} />
             <StyledNewsCardContentWrapper>
                 <StyledNewsCardContent>
                     <StyledNewsCardTitle>HelloWorld!</StyledNewsCardTitle>
