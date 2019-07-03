@@ -1,3 +1,8 @@
 {
-	"homepage": "Strona Główna"
+	"homepage": "Strona główna",
+	"store": "Sklep",
+	"top": "Topka",
+	"banList": "Lista kar",
+	"regulations": "Regulamin"
 }
+
