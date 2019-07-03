@@ -1,3 +1,7 @@
 {
-	"homepage": "Home"
+	"homepage": "Home",
+	"store": "Store",
+	"top": "Top",
+	"banList": "Ban list",
+	"regulations": "Regulations"
 }
