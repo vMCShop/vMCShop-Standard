@@ -23,6 +23,7 @@
         "resolve-url-loader": "^2.3.1"
     },
     "dependencies": {
+        "@bit/styled-components.polished.color.darken": "^3.2.0",
         "@bit/styled-components.polished.color.rgba": "^3.2.0",
         "@dr-kobros/react-webfont-loader": "^8.0.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.19",

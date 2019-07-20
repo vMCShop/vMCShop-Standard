@@ -3,7 +3,7 @@ import Ink from 'react-ink';
 
 const Ripple = () => {
     return (
-        <Ink background={false} radius="500" />
+        <Ink radius={500} />
     );
 };
 

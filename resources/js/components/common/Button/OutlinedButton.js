@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import darken from '@bit/styled-components.polished.color.darken';
+import rgba from '@bit/styled-components.polished.color.rgba';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import BaseButton from '@/components/common/Button/BaseButton';
@@ -9,22 +9,18 @@ import { Ripple } from '@/components/common/Ripple';
 
 import { colors } from '@/utils';
 
-const StyledButton = styled(BaseButton)`
+const StyledOutlinedButton = styled(BaseButton)`
     padding: 6px 16px;
 
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.75;
 
-    color: ${colors.black};
-    background-color: ${colors.default};
+    color: ${rgba(colors.black, 0.74)};
+    background-color: transparent;
 
+    border: 1px solid ${rgba(colors.black, 0.5)};
     border-radius: 4px;
-
-    box-shadow:
-        0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-        0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 
     transition:
         background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
@@ -32,7 +28,7 @@ const StyledButton = styled(BaseButton)`
         border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
     &:hover {
-        background-color: ${darken(0.045, colors.default)};
+        background-color: ${rgba(colors.black, 0.08)};
     }
 
     ${({withLeftIcon}) => withLeftIcon && `
@@ -60,89 +56,89 @@ const StyledButton = styled(BaseButton)`
     `}
 
     ${({color}) => color === 'primary' && `
-        color: ${colors.white};
-        background-color: ${colors.primary};
+        color: ${colors.primary};
+
+        border: 1px solid ${rgba(colors.primary, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.primary)};
+            background-color: ${rgba(colors.primary, 0.08)};
         }
     `}
 
     ${({color}) => color === 'secondary' && `
-        color: ${colors.white};
-        background-color: ${colors.secondary};
+        color: ${colors.secondary};
+
+        border: 1px solid ${rgba(colors.secondary, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.secondary)};
+            background-color: ${rgba(colors.secondary, 0.08)};
         }
     `}
 
     ${({color}) => color === 'success' && `
-        color: ${colors.white};
-        background-color: ${colors.success};
+        color: ${colors.success};
+
+        border: 1px solid ${rgba(colors.success, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.success)};
+            background-color: ${rgba(colors.success, 0.08)};
         }
     `}
 
     ${({color}) => color === 'danger' && `
-        color: ${colors.white};
-        background-color: ${colors.danger};
+        color: ${colors.danger};
+
+        border: 1px solid ${rgba(colors.danger, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.danger)};
+            background-color: ${rgba(colors.danger, 0.08)};
         }
     `}
 
     ${({color}) => color === 'warning' && `
-        color: ${colors.white};
-        background-color: ${colors.warning};
+        color: ${colors.warning};
+
+        border: 1px solid ${rgba(colors.warning, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.warning)};
+            background-color: ${rgba(colors.warning, 0.08)};
         }
     `}
 
     ${({color}) => color === 'info' && `
-        color: ${colors.white};
-        background-color: ${colors.info};
+        color: ${colors.info};
+
+        border: 1px solid ${rgba(colors.info, 0.5)};
 
         &:hover {
-            background-color: ${darken(0.03, colors.info)};
+            background-color: ${rgba(colors.info, 0.08)};
         }
     `}
 
     ${({disabled}) => disabled && `
         color: rgba(0, 0, 0, 0.26);
 
-        background-color: rgba(0, 0, 0, 0.12);
+        border: 1px solid ${rgba(colors.black, 0.26)};
 
         box-shadow: none;
 
         cursor: default;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.12);
+            background-color: transparent;
         }
     `}
 `;
 
-const Button = (props) => {
-    let size = '';
-
-    if (props.size === 'lg') {
-        size = '';
-    }
-
+const OutlinedButton = (props) => {
     return (
-        <StyledButton {...props}>
-            {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} transform={size} /> : ''}
+        <StyledOutlinedButton {...props}>
+            {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} /> : ''}
             {props.children}
-            {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} transform={size} /> : ''}
+            {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} /> : ''}
             {props.disabled ? '' : <Ripple />}
-        </StyledButton>
+        </StyledOutlinedButton>
     )
 }
 
-export default Button;
+export default OutlinedButton;

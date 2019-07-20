@@ -19,45 +19,45 @@ const PosedNavigationLink = posed.li({
 
 const StyledNavigationLink = styled(PosedNavigationLink)`
     margin-top: 5px;
-    
+
     &:first-child {
         margin-top: 0;
     }
-    
+
     a {
         position: relative;
-    
+
         display: flex;
         align-items: center;
-        
+
         padding: .93em;
-        
+
         font-size: .8rem;
         font-weight: 300;
         color: ${colors.primary};
-        
+
         text-decoration: none;
-        text-transform: uppercase; 
-        
+        text-transform: uppercase;
+
         background-color: ${({active}) => active ? rgba(colors.black, 0.1) : 'transparent'};
-        
+
         border-radius: calc(${theme.border_radius} / 2);
-        
+
         svg {
-            margin-right: .5em;
+            margin-right: .2em;
         }
-        
+
         span {
             margin-top: 2px;
         }
     }
-    
+
     ${media.laptop`
         margin-top: 0;
-        
+
         a {
             color: ${colors.white};
-            
+
             background-color: ${({active}) => active ? rgba(colors.white, 0.1) : 'transparent'};
         }
     `}

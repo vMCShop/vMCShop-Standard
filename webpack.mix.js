@@ -14,8 +14,10 @@ const mix = require('laravel-mix');
 const PATHS = {
     src: 'resources',
     dist: 'public',
-    proxy: 'http://vmcshop.net/'
+    proxy: 'http://localhost:8000/'
 };
+
+//test
 
 mix
     .setPublicPath(PATHS.dist)

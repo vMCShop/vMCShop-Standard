@@ -28,7 +28,7 @@ i18n
                 navigation: navigation_pl
             }
         },
-        lng: "en",
+        lng: "pl",
         fallbackLng: "en",
         interpolation: {
             escapeValue: false
