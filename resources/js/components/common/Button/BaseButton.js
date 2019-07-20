@@ -24,6 +24,7 @@ const BaseButton = styled.button`
     border-radius: 0;
 
     cursor: pointer;
+    white-space: nowrap;
     user-select: none;
     -moz-appearance: none;
     -webkit-appearance: none;

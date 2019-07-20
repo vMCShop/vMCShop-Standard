@@ -10,7 +10,10 @@ import { Ripple } from '@/components/common/Ripple';
 import { colors } from '@/utils';
 
 const StyledIconButton = styled(BaseButton)`
-    padding: 10px;
+    width: 40px;
+    height: 40px;
+
+    padding: 5px;
 
     font-size: 1.5rem;
 
@@ -26,15 +29,24 @@ const StyledIconButton = styled(BaseButton)`
     }
 
     ${({size}) => size === 'xs' && `
-        padding: 6px;
+        width: 34px;
+        height: 34px;
+
+        padding: 2px;
     `}
 
     ${({size}) => size === 'sm' && `
-        padding: 8px;
+        width: 36px;
+        height: 36px;
+
+        padding: 3px;
     `}
 
     ${({size}) => size === 'lg' && `
-        padding: 12px;
+        width: 50px;
+        height: 50px;
+
+        padding: 10px;
     `}
 
     ${({color}) => color === 'primary' && `
@@ -109,7 +121,7 @@ const IconButton = (props) => {
 
     return (
         <StyledIconButton {...props}>
-            <FontAwesomeIcon icon={props.icon} transform={size} />
+            <FontAwesomeIcon icon={props.icon} transform={size} fixedWidth />
             {props.disabled ? '' : <Ripple />}
         </StyledIconButton>
     )
