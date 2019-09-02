@@ -89,7 +89,7 @@ const BaseLayout = ({ children, title }) => {
                     <FontAwesomeIcon icon={faHome} size="2x" transform='shrink-4' />
                     <span>{t('navigation:homepage')}</span>
                 </NavigationLink>
-                <NavigationLink to="#" external>
+                <NavigationLink to="/shop">
                     <FontAwesomeIcon icon={faShoppingBasket} size="2x" transform='shrink-4' />
                     <span>{t('navigation:store')}</span>
                 </NavigationLink>
