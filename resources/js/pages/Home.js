@@ -2,15 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BaseLayout } from '@/components/common/Layout';
-import { NewsSection, ServersSidebarSection } from '@/components/sections';
+import NewsSection from '@/components/sections/news/NewsSection';
+import SidebarSection from '@/components/sections/common/SidebarSection';
 
 import { theme, media, colors } from '@/utils';
 
 const title = 'vMCShop.pro | Strona Główna';
-
-const StyledDiv = styled.div`
-height: 100vh;
-`;
 
 const Grid = styled.div`
     display: grid;
@@ -49,14 +46,69 @@ const serverStatuses = [
     },
 ];
 
+const news = [
+    {
+        title: 'Hello World!',
+        image: 'https://via.placeholder.com/500',
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        title: 'Hello World without image!',
+        image: null,
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        title: 'Hello World without long content!',
+        image: 'https://via.placeholder.com/500',
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: null
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        title: 'Hello World without image and long content!',
+        image: null,
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: null
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    }
+];
+
 class Home extends React.Component {
 
     render() {
         return (
             <BaseLayout title={title}>
                 <Grid>
-                    <ServersSidebarSection serverStatuses={serverStatuses} />
-                    <NewsSection />
+                    <SidebarSection serverStatuses={serverStatuses} />
+                    <NewsSection data={news} />
                 </Grid>
             </BaseLayout>
         )

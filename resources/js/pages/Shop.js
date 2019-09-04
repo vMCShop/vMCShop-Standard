@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BaseLayout } from '@/components/common/Layout';
-import { ServersSidebarSection, ServerServicesSection } from '@/components/sections';
+// import { ServersSidebarSection, ServerServicesSection } from '@/components/sections';
 
 import { theme, media, colors } from '@/utils';
 
@@ -60,8 +60,8 @@ class Shop extends React.Component {
         return (
             <BaseLayout title={title}>
                 <Grid>
-                    <ServersSidebarSection serverStatuses={serverStatuses} />
-                    <ServerServicesSection />
+                    {/*<ServersSidebarSection serverStatuses={serverStatuses} />*/}
+                    {/*<ServerServicesSection />*/}
                 </Grid>
             </BaseLayout>
         )

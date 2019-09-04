@@ -41,7 +41,7 @@ class App extends React.Component {
         return (
             <Router>
                 <Route exact path="/" component={Home} />
-                <Route path="/shop" component={Shop} />
+                {/*<Route path="/shop" component={Shop} />*/}
             </Router>
         );
     }

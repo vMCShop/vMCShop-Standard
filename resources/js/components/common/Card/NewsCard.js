@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faNewspaper, faClock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { Card } from '@/components/common/Card';
-import { Pagination, PaginationItem } from '@/components/common/Pagination';
-import { TextButton, IconButton } from '@/components/common/Button';
+import { TextButton } from "@/components/common/Button";
 
 import { theme, media, colors } from '@/utils';
 
@@ -98,46 +97,27 @@ const StyledNewsCardDate = styled.p`
     }
 `;
 
-const NewsCard = () => {
+const NewsCard = (props) => {
     const { t } = useTranslation();
 
     return (
         <StyledNewsCard as="article">
-            <StyledNewsCardImage src="https://via.placeholder.com/500" />
+            {props.data.image !== null && <StyledNewsCardImage src={props.data.image} />}
             <StyledNewsCardContentWrapper>
                 <StyledNewsCardContent>
-                    <StyledNewsCardTitle as="a" href="#">HelloWorld!</StyledNewsCardTitle>
-                    <p>
-                        Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.
-                    </p>
+                    <StyledNewsCardTitle as="a" href="#">{props.data.title}</StyledNewsCardTitle>
+                    <p>{props.data.content.short}</p>
                 </StyledNewsCardContent>
                 <StyledNewsCardFooter>
                     <StyledNewsCardDate>
-                        <FontAwesomeIcon icon={faClock} transform="shrink-1" />&nbsp;03 maj 2019 o 15:32
-                        <FontAwesomeIcon icon={faUser} transform="shrink-1" />&nbsp;Admin
+                        <FontAwesomeIcon icon={faClock} transform="shrink-1" />&nbsp;{props.data.date.forHuman}
+                        <FontAwesomeIcon icon={faUser} transform="shrink-1" />&nbsp;{props.data.author}
                     </StyledNewsCardDate>
-                    <TextButton color='success'>{t('homepage:news.readMore')}</TextButton>
+                    {props.data.content.long !== null && <TextButton color='success'>{t('homepage:news.readMore')}</TextButton>}
                 </StyledNewsCardFooter>
             </StyledNewsCardContentWrapper>
         </StyledNewsCard>
     );
 };
 
-const StyledNewsSection = styled.section`
-
-`;
-
-const NewsSection = () => {
-    const { t } = useTranslation();
-
-    return (
-        <StyledNewsSection>
-            <h2><FontAwesomeIcon icon={faNewspaper} /> {t('homepage:sectionHeaders.news')}</h2>
-            <NewsCard />
-            <NewsCard />
-            <Pagination></Pagination>
-        </StyledNewsSection>
-    );
-};
-
-export default NewsSection;
+export default NewsCard;
