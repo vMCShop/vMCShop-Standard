@@ -5,7 +5,7 @@ import { BaseLayout } from '@/components/common/Layout';
 import NewsSection from '@/components/sections/news/NewsSection';
 import SidebarSection from '@/components/sections/common/SidebarSection';
 
-import { theme, media, colors } from '@/utils';
+import { media } from '@/utils';
 
 const title = 'vMCShop.pro | Strona Główna';
 
@@ -21,6 +21,7 @@ const Grid = styled.div`
 
 const serverStatuses = [
     {
+        id: 1,
         name: 'Hardcore',
         online: true,
         address: 'hc.vmcshop.pro',
@@ -29,6 +30,7 @@ const serverStatuses = [
         version: '1.14.2'
     },
     {
+        id: 2,
         name: 'Survival',
         online: false,
         address: 'sv.vmcshop.pro',
@@ -37,6 +39,7 @@ const serverStatuses = [
         version: '1.14.2'
     },
     {
+        id: 3,
         name: 'MiniGames',
         online: true,
         address: 'mg.vmcshop.pro',
@@ -48,6 +51,7 @@ const serverStatuses = [
 
 const news = [
     {
+        id: 1,
         title: 'Hello World!',
         image: 'https://via.placeholder.com/500',
         content: {
@@ -61,6 +65,7 @@ const news = [
         }
     },
     {
+        id: 2,
         title: 'Hello World without image!',
         image: null,
         content: {
@@ -74,6 +79,7 @@ const news = [
         }
     },
     {
+        id: 3,
         title: 'Hello World without long content!',
         image: 'https://via.placeholder.com/500',
         content: {
@@ -87,6 +93,7 @@ const news = [
         }
     },
     {
+        id: 4,
         title: 'Hello World without image and long content!',
         image: null,
         content: {

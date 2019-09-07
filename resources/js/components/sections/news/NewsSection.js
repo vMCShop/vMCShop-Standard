@@ -14,7 +14,7 @@ const NewsSection = (props) => {
             <h2><FontAwesomeIcon icon={faNewspaper} /> {t('homepage:sectionHeaders.news')}</h2>
 
             {props.data.map(news => (
-                <NewsCard data={news} />
+                <NewsCard key={news.id} data={news} />
             ))}
 
             <Pagination />

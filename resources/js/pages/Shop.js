@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BaseLayout } from '@/components/common/Layout';
-// import { ServersSidebarSection, ServerServicesSection } from '@/components/sections';
+import SidebarSection from '@/components/sections/common/SidebarSection';
 
-import { theme, media, colors } from '@/utils';
+import { media } from '@/utils';
 
 const title = 'vMCShop.pro | Sklep';
 
@@ -20,6 +20,7 @@ const Grid = styled.div`
 
 const serverStatuses = [
     {
+        id: 1,
         name: 'Hardcore',
         online: true,
         address: 'hc.vmcshop.pro',
@@ -28,6 +29,7 @@ const serverStatuses = [
         version: '1.14.2'
     },
     {
+        id: 2,
         name: 'Survival',
         online: false,
         address: 'sv.vmcshop.pro',
@@ -36,6 +38,7 @@ const serverStatuses = [
         version: '1.14.2'
     },
     {
+        id: 3,
         name: 'MiniGames',
         online: true,
         address: 'mg.vmcshop.pro',
@@ -45,23 +48,14 @@ const serverStatuses = [
     },
 ];
 
-const serverServices = [
-    {
-      name: 'Ranga VIP',
-      image: '',
-      description: 'lorem',
-      price: '11.07'
-    },
-];
-
 class Shop extends React.Component {
 
     render() {
         return (
             <BaseLayout title={title}>
                 <Grid>
-                    {/*<ServersSidebarSection serverStatuses={serverStatuses} />*/}
-                    {/*<ServerServicesSection />*/}
+                    <SidebarSection serverStatuses={serverStatuses} />
+
                 </Grid>
             </BaseLayout>
         )

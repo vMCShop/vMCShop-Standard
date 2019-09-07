@@ -55677,6 +55677,9 @@ function (_React$Component) {
         exact: true,
         path: "/",
         component: _pages_Home__WEBPACK_IMPORTED_MODULE_10__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/shop",
+        component: _pages_Shop__WEBPACK_IMPORTED_MODULE_11__["default"]
       }));
     }
   }]);
@@ -57240,7 +57243,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var StyledPagination = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].nav(_templateObject());
-var StyledList = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject2());
+var StyledList = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul(_templateObject2());
 
 var Pagination = function Pagination() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPagination, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledList, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PaginationItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57472,6 +57475,7 @@ var SidebarSection = function SidebarSection(props) {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faServer"]
   }), " ", t('homepage:sectionHeaders.serverStatus')), props.serverStatuses.map(function (serverStatus) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_common_Card__WEBPACK_IMPORTED_MODULE_4__["ServerStatusCard"], {
+      key: serverStatus.id,
       data: serverStatus
     });
   }));
@@ -57512,6 +57516,7 @@ var NewsSection = function NewsSection(props) {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faNewspaper"]
   }), " ", t('homepage:sectionHeaders.news')), props.data.map(function (news) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_common_Card__WEBPACK_IMPORTED_MODULE_4__["NewsCard"], {
+      key: news.id,
       data: news
     });
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_common_Pagination__WEBPACK_IMPORTED_MODULE_5__["Pagination"], null));
@@ -57607,6 +57612,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var title = 'vMCShop.pro | Strona Główna';
 var Grid = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), _utils__WEBPACK_IMPORTED_MODULE_5__["media"].laptop(_templateObject2()));
 var serverStatuses = [{
+  id: 1,
   name: 'Hardcore',
   online: true,
   address: 'hc.vmcshop.pro',
@@ -57614,6 +57620,7 @@ var serverStatuses = [{
   maxPlayers: 500,
   version: '1.14.2'
 }, {
+  id: 2,
   name: 'Survival',
   online: false,
   address: 'sv.vmcshop.pro',
@@ -57621,6 +57628,7 @@ var serverStatuses = [{
   maxPlayers: 300,
   version: '1.14.2'
 }, {
+  id: 3,
   name: 'MiniGames',
   online: true,
   address: 'mg.vmcshop.pro',
@@ -57629,6 +57637,7 @@ var serverStatuses = [{
   version: '1.14.2'
 }];
 var news = [{
+  id: 1,
   title: 'Hello World!',
   image: 'https://via.placeholder.com/500',
   content: {
@@ -57641,6 +57650,7 @@ var news = [{
     forHuman: '03 maj 2019 o 15:32'
   }
 }, {
+  id: 2,
   title: 'Hello World without image!',
   image: null,
   content: {
@@ -57653,6 +57663,7 @@ var news = [{
     forHuman: '03 maj 2019 o 15:32'
   }
 }, {
+  id: 3,
   title: 'Hello World without long content!',
   image: 'https://via.placeholder.com/500',
   content: {
@@ -57665,6 +57676,7 @@ var news = [{
     forHuman: '03 maj 2019 o 15:32'
   }
 }, {
+  id: 4,
   title: 'Hello World without image and long content!',
   image: null,
   content: {
@@ -57722,7 +57734,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components_common_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/common/Layout */ "./resources/js/components/common/Layout/index.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/utils */ "./resources/js/utils/index.js");
+/* harmony import */ var _components_sections_common_SidebarSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/sections/common/SidebarSection */ "./resources/js/components/sections/common/SidebarSection.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/utils */ "./resources/js/utils/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57765,12 +57778,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
- // import { ServersSidebarSection, ServerServicesSection } from '@/components/sections';
+
 
 
 var title = 'vMCShop.pro | Sklep';
-var Grid = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), _utils__WEBPACK_IMPORTED_MODULE_3__["media"].laptop(_templateObject2()));
+var Grid = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), _utils__WEBPACK_IMPORTED_MODULE_4__["media"].laptop(_templateObject2()));
 var serverStatuses = [{
+  id: 1,
   name: 'Hardcore',
   online: true,
   address: 'hc.vmcshop.pro',
@@ -57778,6 +57792,7 @@ var serverStatuses = [{
   maxPlayers: 500,
   version: '1.14.2'
 }, {
+  id: 2,
   name: 'Survival',
   online: false,
   address: 'sv.vmcshop.pro',
@@ -57785,18 +57800,13 @@ var serverStatuses = [{
   maxPlayers: 300,
   version: '1.14.2'
 }, {
+  id: 3,
   name: 'MiniGames',
   online: true,
   address: 'mg.vmcshop.pro',
   players: 784,
   maxPlayers: 1000,
   version: '1.14.2'
-}];
-var serverServices = [{
-  name: 'Ranga VIP',
-  image: '',
-  description: 'lorem',
-  price: '11.07'
 }];
 
 var Shop =
@@ -57815,7 +57825,9 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_common_Layout__WEBPACK_IMPORTED_MODULE_2__["BaseLayout"], {
         title: title
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Grid, null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Grid, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_sections_common_SidebarSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        serverStatuses: serverStatuses
+      })));
     }
   }]);
 

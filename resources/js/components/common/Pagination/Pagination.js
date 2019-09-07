@@ -8,7 +8,7 @@ const StyledPagination = styled.nav`
 
 `;
 
-const StyledList = styled.li`
+const StyledList = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,11 +20,11 @@ const Pagination = () => {
     return (
         <StyledPagination>
             <StyledList>
-                <PaginationItem arrowLeft></PaginationItem>
+                <PaginationItem arrowLeft />
                 <PaginationItem>1</PaginationItem>
                 <PaginationItem active>2</PaginationItem>
                 <PaginationItem>3</PaginationItem>
-                <PaginationItem arrowRight></PaginationItem>
+                <PaginationItem arrowRight />
             </StyledList>
         </StyledPagination>
     );
