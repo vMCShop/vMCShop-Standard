@@ -1,0 +1,9 @@
+{
+  "sectionHeaders": {
+    "shop": "Sklep serwera {{name}}"
+  },
+  "service": {
+    "price": "od {{price}} zł",
+    "select": "Wybierz"
+  }
+}

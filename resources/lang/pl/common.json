@@ -1,5 +1,8 @@
 {
-	"server": {
-		"name": "Serwer {{name}}"
-	}
+  "sectionHeaders": {
+    "serverStatus": "Status Serwerów"
+  },
+  "server": {
+    "name": "Serwer {{name}}"
+  }
 }

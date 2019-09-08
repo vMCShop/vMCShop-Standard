@@ -6,9 +6,14 @@ import { useTranslation, initReactI18next } from 'react-i18next';
 import common_en from '@/../lang/en/common.json';
 import homepage_en from '@/../lang/en/homepage.json';
 import navigation_en from '@/../lang/en/navigation.json';
+import shop_en from '@/../lang/en/shop.json';
+
 import common_pl from '@/../lang/pl/common.json';
 import homepage_pl from '@/../lang/pl/homepage.json';
 import navigation_pl from '@/../lang/pl/navigation.json';
+import shop_pl from '@/../lang/pl/shop.json';
+
+import { BaseLayout } from "@/components/common/Layout";
 
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -20,12 +25,14 @@ i18n
             en: {
                 common: common_en,
                 homepage: homepage_en,
-                navigation: navigation_en
+                navigation: navigation_en,
+                shop: shop_en
             },
             pl: {
                 common: common_pl,
                 homepage: homepage_pl,
-                navigation: navigation_pl
+                navigation: navigation_pl,
+                shop: shop_pl
             }
         },
         lng: "pl",
@@ -40,8 +47,10 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <Route exact path="/" component={Home} />
-                <Route path="/shop" component={Shop} />
+                <BaseLayout title="vMCShop Standard">
+                    <Route exact path="/" component={Home} />
+                    <Route path="/shop" component={Shop} />
+                </BaseLayout>
             </Router>
         );
     }

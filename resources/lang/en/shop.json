@@ -1,0 +1,9 @@
+{
+  "sectionHeaders": {
+    "shop": "{{name}} server's shop"
+  },
+  "service": {
+    "price": "from {{price}} zl",
+    "select": "Select"
+  }
+}

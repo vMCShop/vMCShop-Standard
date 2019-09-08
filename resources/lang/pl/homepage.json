@@ -1,9 +1,8 @@
 {
-	"news": {
-		"readMore": "Czytaj dalej"
-	},
-	"sectionHeaders": {
-		"news": "Aktualności",
-		"serverStatus": "Status Serwerów"
-	}
+  "news": {
+    "readMore": "Czytaj dalej"
+  },
+  "sectionHeaders": {
+    "news": "Aktualności"
+  }
 }

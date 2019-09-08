@@ -12,6 +12,8 @@ const StyledList = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    padding: 0;
 
     list-style: none;
 `;

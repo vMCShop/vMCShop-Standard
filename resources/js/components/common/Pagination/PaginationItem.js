@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-import BaseButton from '@/components/common/Button/BaseButton';
 import { Button, IconButton, TextButton } from '@/components/common/Button';
 
 const StyledListItem = styled.li`

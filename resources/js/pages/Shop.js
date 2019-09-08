@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { BaseLayout } from '@/components/common/Layout';
 import SidebarSection from '@/components/sections/common/SidebarSection';
+import ServicesSection from '@/components/sections/shop/ServicesSection';
 
 import { media } from '@/utils';
 
@@ -45,19 +46,60 @@ const serverStatuses = [
         players: 784,
         maxPlayers: 1000,
         version: '1.14.2'
+    }
+];
+
+const services = [
+    {
+        id: 1,
+        name: 'Ranga VIP',
+        image: 'https://via.placeholder.com/500',
+        description: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        price: 11.07
     },
+    {
+        id: 2,
+        name: 'Ranga VIP',
+        image: 'https://via.placeholder.com/500',
+        description: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        price: 11.07
+    },
+    {
+        id: 3,
+        name: 'Ranga VIP',
+        image: 'https://via.placeholder.com/500',
+        description: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        price: 11.07
+    },
+    {
+        id: 4,
+        name: 'Ranga VIP',
+        image: 'https://via.placeholder.com/500',
+        description: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        price: 11.07
+    }
 ];
 
 class Shop extends React.Component {
 
     render() {
         return (
-            <BaseLayout title={title}>
-                <Grid>
-                    <SidebarSection serverStatuses={serverStatuses} />
-
-                </Grid>
-            </BaseLayout>
+            <Grid>
+                <SidebarSection serverStatuses={serverStatuses} />
+                <ServicesSection horizontal data={services} />
+            </Grid>
         )
     }
 

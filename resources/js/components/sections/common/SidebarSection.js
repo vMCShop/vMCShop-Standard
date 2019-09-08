@@ -10,7 +10,7 @@ const SidebarSection = (props) => {
 
     return (
         <div>
-            <h2><FontAwesomeIcon icon={faServer} /> {t('homepage:sectionHeaders.serverStatus')}</h2>
+            <h2><FontAwesomeIcon icon={faServer} /> {t('common:sectionHeaders.serverStatus')}</h2>
 
             {props.serverStatuses.map(serverStatus => (
                 <ServerStatusCard key={serverStatus.id} data={serverStatus} />

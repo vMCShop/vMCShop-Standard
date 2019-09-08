@@ -1,9 +1,8 @@
 {
-	"news": {
-		"readMore": "Read more"
-	},
-	"sectionHeaders": {
-		"news": "News",
-		"serverStatus": "Server Status"
-	}
+  "news": {
+    "readMore": "Read more"
+  },
+  "sectionHeaders": {
+    "news": "News"
+  }
 }

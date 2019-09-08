@@ -112,12 +112,10 @@ class Home extends React.Component {
 
     render() {
         return (
-            <BaseLayout title={title}>
-                <Grid>
-                    <SidebarSection serverStatuses={serverStatuses} />
-                    <NewsSection data={news} />
-                </Grid>
-            </BaseLayout>
+            <Grid>
+                <SidebarSection serverStatuses={serverStatuses} />
+                <NewsSection data={news} />
+            </Grid>
         )
     }
 
