@@ -1,0 +1,123 @@
+import React from 'react';
+import styled from 'styled-components';
+
+import NewsSection from '@/shop/sections/news/NewsSection';
+import SidebarSection from '@/shop/sections/common/SidebarSection';
+
+import { media } from '@utils';
+
+const title = 'vMCShop.pro | Strona Główna';
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 35px;
+    
+    ${media.laptop`
+        grid-template-columns: 1fr 2fr;
+    `}
+`;
+
+const serverStatuses = [
+    {
+        id: 1,
+        name: 'Hardcore',
+        online: true,
+        address: 'hc.vmcshop.pro',
+        players: 235,
+        maxPlayers: 500,
+        version: '1.14.2'
+    },
+    {
+        id: 2,
+        name: 'Survival',
+        online: false,
+        address: 'sv.vmcshop.pro',
+        players: 124,
+        maxPlayers: 300,
+        version: '1.14.2'
+    },
+    {
+        id: 3,
+        name: 'MiniGames',
+        online: true,
+        address: 'mg.vmcshop.pro',
+        players: 784,
+        maxPlayers: 1000,
+        version: '1.14.2'
+    },
+];
+
+const news = [
+    {
+        id: 1,
+        title: 'Hello World!',
+        image: 'https://via.placeholder.com/500',
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        id: 2,
+        title: 'Hello World without image!',
+        image: null,
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        id: 3,
+        title: 'Hello World without long content!',
+        image: 'https://via.placeholder.com/500',
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: null
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    },
+    {
+        id: 4,
+        title: 'Hello World without image and long content!',
+        image: null,
+        content: {
+            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long: null
+        },
+        author: 'Admin',
+        date: {
+            timestamp: 1567633550,
+            forHuman: '03 maj 2019 o 15:32'
+        }
+    }
+];
+
+class Home extends React.Component {
+
+    render() {
+        return (
+            <Grid>
+                <SidebarSection serverStatuses={serverStatuses} />
+                <NewsSection data={news} />
+            </Grid>
+        )
+    }
+
+}
+
+export default Home;

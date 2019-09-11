@@ -7,8 +7,13 @@ use Illuminate\Support\Facades\View;
 
 class ReactController extends Controller
 {
-    public function app()
+    public function shop()
     {
-        return View::make('index');
+        return View::make('react/shop');
+    }
+    
+    public function admin()
+    {
+        return View::make('react/admin');
     }
 }

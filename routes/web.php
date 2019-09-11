@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/{path?}', [ 'uses' => 'ReactController@app', 'as' => 'react.app', 'where' => ['path' => '.*'] ]);
+Route::get('/admin/{path?}', [ 'uses' => 'ReactController@admin', 'as' => 'react.admin', 'where' => ['path' => '.*'] ]);
+
+Route::get('/{path?}', [ 'uses' => 'ReactController@shop', 'as' => 'react.shop', 'where' => ['path' => '.*'] ]);
