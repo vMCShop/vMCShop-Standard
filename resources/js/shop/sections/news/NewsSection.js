@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
 
-import { NewsCard } from '@/common/components/Card';
+import { NewsCard } from '@/shop/components/Card';
 import { Pagination } from '@/common/components/Pagination';
 
 const NewsSection = (props) => {

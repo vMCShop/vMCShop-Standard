@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
-import { ServiceCard } from '@/common/components/Card';
+import { ServiceCard } from '@/shop/components/Card';
 import { Pagination } from '@/common/components/Pagination';
 
 import { media } from '@utils';
@@ -36,7 +36,7 @@ const ServicesSection = (props) => {
                         <ServiceCard key={service.id} data={service} />
                     ))}
                 </Grid>
-            };
+            }
 
             <Pagination />
         </div>

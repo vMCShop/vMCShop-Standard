@@ -3,6 +3,10 @@
     "serverStatus": "Status Serwerów"
   },
   "server": {
-    "name": "Serwer {{name}}"
+    "name": "Serwer {{name}}",
+    "status": {
+      "offline": "Offline",
+      "online": "Online"
+    }
   }
 }

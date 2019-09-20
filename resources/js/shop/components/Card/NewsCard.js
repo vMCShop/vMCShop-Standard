@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/index";
+import { faClock, faUser } from "@fortawesome/free-solid-svg-icons/index";
 
 import { Card } from '@/common/components/Card';
 import { TextButton } from "@/common/components/Button";

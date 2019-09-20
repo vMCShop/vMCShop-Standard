@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faServer } from "@fortawesome/free-solid-svg-icons";
 
-import { ServerStatusCard } from '@/common/components/Card';
+import { ServerStatusCard } from '@/shop/components/Card';
 
 const SidebarSection = (props) => {
     const { t } = useTranslation();

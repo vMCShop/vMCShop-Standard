@@ -32,7 +32,7 @@ const ServerStatusCard = (props) => {
                 <h3>{t('common:server.name', {name: props.data.name})}</h3>
                 <Badge color={colors.primary}>{props.data.address}</Badge>
                 <ProgressBar color={colors.success} value={props.data.players} max={props.data.maxPlayers} />
-                <Badge color={colors.success}>Online</Badge>
+                <Badge color={colors.success}>{t('common:server.status.online')}</Badge>
                 <Badge color={colors.info}>{props.data.players + '/' + props.data.maxPlayers}</Badge>
                 <Badge color={colors.info}>{props.data.version}</Badge>
             </StyledServerStatusCard>
@@ -43,7 +43,7 @@ const ServerStatusCard = (props) => {
                 <h3>{t('common:server.name', {name: props.data.name})}</h3>
                 <Badge color={colors.primary}>{props.data.address}</Badge>
                 <ProgressBar color={colors.danger} value={100} max={100} />
-                <Badge color={colors.danger}>Offline</Badge>
+                <Badge color={colors.danger}>{t('common:server.status.offline')}</Badge>
             </StyledServerStatusCard>
         );
     }
