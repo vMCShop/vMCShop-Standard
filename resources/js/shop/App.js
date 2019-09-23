@@ -4,18 +4,18 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import common_en from '@lang/en/common.json';
-import homepage_en from '@lang/en/homepage.json';
+import news_en from '@lang/en/news.json';
 import navigation_en from '@lang/en/navigation.json';
 import shop_en from '@lang/en/shop.json';
 
 import common_pl from '@lang/pl/common.json';
-import homepage_pl from '@lang/pl/homepage.json';
+import news_pl from '@lang/pl/news.json';
 import navigation_pl from '@lang/pl/navigation.json';
 import shop_pl from '@lang/pl/shop.json';
 
 import { BaseLayout } from "@/shop/components/Layout";
 
-import Home from './pages/Home';
+import News from './pages/News';
 import Shop from './pages/Shop';
 
 i18n
@@ -24,13 +24,13 @@ i18n
         resources: {
             en: {
                 common: common_en,
-                homepage: homepage_en,
+                news: news_en,
                 navigation: navigation_en,
                 shop: shop_en
             },
             pl: {
                 common: common_pl,
-                homepage: homepage_pl,
+                news: news_pl,
                 navigation: navigation_pl,
                 shop: shop_pl
             }
@@ -48,7 +48,7 @@ class App extends React.Component {
         return (
             <Router>
                 <BaseLayout title="vMCShop Standard">
-                    <Route exact path="/" component={Home} />
+                    <Route exact path="/" component={News} />
                     <Route path="/shop" component={Shop} />
                 </BaseLayout>
             </Router>

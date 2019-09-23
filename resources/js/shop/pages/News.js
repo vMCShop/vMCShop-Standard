@@ -107,7 +107,7 @@ const news = [
     }
 ];
 
-class Home extends React.Component {
+class News extends React.Component {
 
     render() {
         return (
@@ -120,4 +120,4 @@ class Home extends React.Component {
 
 }
 
-export default Home;
+export default News;
