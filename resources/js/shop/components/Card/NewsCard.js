@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/index";
 import { faClock, faUser } from "@fortawesome/free-solid-svg-icons/index";
 
+import { Link } from 'react-router-dom';
+
 import { Card } from '@/common/components/Card';
 import { TextButton } from "@/common/components/Button";
 
@@ -105,7 +107,7 @@ const NewsCard = (props) => {
             {props.data.image !== null && <StyledNewsCardImage src={props.data.image} />}
             <StyledNewsCardContentWrapper>
                 <StyledNewsCardContent>
-                    <StyledNewsCardTitle as="a" href="#">{props.data.title}</StyledNewsCardTitle>
+                    <StyledNewsCardTitle as={Link} to="/news/post">{props.data.title}</StyledNewsCardTitle>
                     <p>{props.data.content.short}</p>
                 </StyledNewsCardContent>
                 <StyledNewsCardFooter>
@@ -113,7 +115,7 @@ const NewsCard = (props) => {
                         <FontAwesomeIcon icon={faClock} transform="shrink-1" />&nbsp;{props.data.date.forHuman}
                         <FontAwesomeIcon icon={faUser} transform="shrink-1" />&nbsp;{props.data.author}
                     </StyledNewsCardDate>
-                    {props.data.content.long !== null && <TextButton color='success'>{t('homepage:news.readMore')}</TextButton>}
+                    {props.data.content.long !== null && <TextButton color="success" as={Link} to="/news/post">{t('news:post.readMore')}</TextButton>}
                 </StyledNewsCardFooter>
             </StyledNewsCardContentWrapper>
         </StyledNewsCard>

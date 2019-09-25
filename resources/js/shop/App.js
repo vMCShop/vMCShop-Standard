@@ -17,6 +17,7 @@ import { BaseLayout } from "@/shop/components/Layout";
 
 import News from './pages/News';
 import Shop from './pages/Shop';
+import Post from './pages/Post';
 
 i18n
     .use(initReactI18next)
@@ -50,6 +51,7 @@ class App extends React.Component {
                 <BaseLayout title="vMCShop Standard">
                     <Route exact path="/" component={News} />
                     <Route path="/shop" component={Shop} />
+                    <Route path="/news/post" component={Post} />
                 </BaseLayout>
             </Router>
         );

@@ -11,7 +11,7 @@ const NewsSection = (props) => {
 
     return (
         <div>
-            <h2><FontAwesomeIcon icon={faNewspaper} /> {t('homepage:sectionHeaders.news')}</h2>
+            <h2><FontAwesomeIcon icon={faNewspaper} /> {t('news:sectionHeaders.news')}</h2>
 
             {props.data.map(news => (
                 <NewsCard key={news.id} data={news} />
