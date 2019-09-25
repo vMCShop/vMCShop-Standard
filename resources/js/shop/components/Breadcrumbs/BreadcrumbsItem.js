@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Link } from 'react-router-dom';
 
-import { TextButton } from "@/common/components/Button";
+import BaseButton from "@/common/components/Button/BaseButton";
 
 import { colors } from '@utils';
 
@@ -31,12 +31,41 @@ const StyledBreadcrumbsItem = styled.li`
     }
 `;
 
+const StyledTextButton = styled(BaseButton)`
+    padding: 6px 8px;
+
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.75;
+
+    color: ${colors.info};
+    text-transform: none;
+    background-color: transparent;
+    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    &:hover {
+      color: ${colors.success};
+    }
+    
+    ${({disabled}) => disabled && `
+        color: rgba(0, 0, 0, 0.26);
+
+        box-shadow: none;
+
+        cursor: default;
+        
+        &:hover {
+            color: rgba(0, 0, 0, 0.26);
+        }
+    `}
+`;
+
 const BreadcrumbsItem = ({name, translation, to, active}) => {
     const { t } = useTranslation();
 
     return (
         <StyledBreadcrumbsItem>
-            <TextButton color="info" as={to && Link} to={to} disabled={active}>{name ? name : translation ? t(translation) : 'error'}</TextButton>
+            <StyledTextButton color="info" as={to && Link} to={to} disabled={active}>{name ? name : translation ? t(translation) : 'error'}</StyledTextButton>
         </StyledBreadcrumbsItem>
     );
 };

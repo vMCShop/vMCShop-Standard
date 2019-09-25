@@ -68688,10 +68688,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _common_components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/common/components/Button */ "./resources/js/common/components/Button/index.js");
+/* harmony import */ var _common_components_Button_BaseButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/common/components/Button/BaseButton */ "./resources/js/common/components/Button/BaseButton.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils */ "./resources/js/common/utils/index.js");
 /* harmony import */ var _images_svg_chevron_right_solid_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @images/svg/chevron-right-solid.svg */ "./resources/images/svg/chevron-right-solid.svg");
 /* harmony import */ var _images_svg_chevron_right_solid_svg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_svg_chevron_right_solid_svg__WEBPACK_IMPORTED_MODULE_6__);
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    padding: 6px 8px;\n\n    font-size: 0.875rem;\n    font-weight: 400;\n    line-height: 1.75;\n\n    color: ", ";\n    text-transform: none;\n    background-color: transparent;\n    \n    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;\n    &:hover {\n      color: ", ";\n    }\n    \n    ", "\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n\n  &::after {\n        content: url(", ");\n        \n        width: 9px;\n        height: 14px;\n        \n        margin: 0 .5em;\n    }\n    \n    &:last-child {\n      &::after {\n        display: none;\n      }\n    }\n"]);
 
@@ -68712,17 +68722,21 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var StyledBreadcrumbsItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject(), _images_svg_chevron_right_solid_svg__WEBPACK_IMPORTED_MODULE_6___default.a);
+var StyledTextButton = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_common_components_Button_BaseButton__WEBPACK_IMPORTED_MODULE_4__["default"])(_templateObject2(), _utils__WEBPACK_IMPORTED_MODULE_5__["colors"].info, _utils__WEBPACK_IMPORTED_MODULE_5__["colors"].success, function (_ref) {
+  var disabled = _ref.disabled;
+  return disabled && "\n        color: rgba(0, 0, 0, 0.26);\n\n        box-shadow: none;\n\n        cursor: default;\n        \n        &:hover {\n            color: rgba(0, 0, 0, 0.26);\n        }\n    ";
+});
 
-var BreadcrumbsItem = function BreadcrumbsItem(_ref) {
-  var name = _ref.name,
-      translation = _ref.translation,
-      to = _ref.to,
-      active = _ref.active;
+var BreadcrumbsItem = function BreadcrumbsItem(_ref2) {
+  var name = _ref2.name,
+      translation = _ref2.translation,
+      to = _ref2.to,
+      active = _ref2.active;
 
   var _useTranslation = Object(react_i18next__WEBPACK_IMPORTED_MODULE_2__["useTranslation"])(),
       t = _useTranslation.t;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledBreadcrumbsItem, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Button__WEBPACK_IMPORTED_MODULE_4__["TextButton"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledBreadcrumbsItem, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledTextButton, {
     color: "info",
     as: to && react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"],
     to: to,
