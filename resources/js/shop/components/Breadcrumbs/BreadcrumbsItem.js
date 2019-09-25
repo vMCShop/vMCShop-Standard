@@ -38,7 +38,7 @@ const StyledTextButton = styled(BaseButton)`
     font-weight: 400;
     line-height: 1.75;
 
-    color: ${colors.info};
+    color: ${colors.primary};
     text-transform: none;
     background-color: transparent;
     
