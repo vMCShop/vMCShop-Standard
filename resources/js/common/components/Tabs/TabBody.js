@@ -15,7 +15,7 @@ class TabBody extends React.Component {
 
         return (
             <StyledTabBody>
-                <SwipeableViews index={this.props.getActiveTabIndex()}>
+                <SwipeableViews index={this.props.getActiveTabIndex()} animateHeight={true} resistance={true} springConfig={{duration: '0.4s', easeFunction: 'ease-in-out', delay: '0s'}}>
                     {this.props.children.map((child, i) => (
                         <div key={i}>{child}</div>
                     ))}

@@ -110,7 +110,7 @@ class TabsBar extends React.Component {
     };
 
     updateIndicatorPosition = () => {
-        this.indicatorAnimation = TweenMax.to(this.indicator, .3, {x: this.getIndicatorPosition(), width: this.getItemWidth(), ease: 'Power4'});
+        this.indicatorAnimation = TweenMax.to(this.indicator, .4, {x: this.getIndicatorPosition(), width: this.getItemWidth(), ease: 'Power4'});
     };
 
     render() {

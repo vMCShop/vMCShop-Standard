@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { TabsBox, TabsBar, Tab, TabBody, TabPanel } from "@/common/components/Tabs";
+import { TextInput } from '@/common/components/Input';
 
 const StyledServicePaymentSection = styled.div`
   margin-top: 1em;
@@ -17,7 +18,9 @@ const ServicePaymentSection = () => {
                     <Tab>Test 3</Tab>
                 </TabsBar>
                 <TabBody>
-                    <TabPanel>1</TabPanel>
+                    <TabPanel>
+                        <TextInput label="Kod z SMS" />
+                    </TabPanel>
                     <TabPanel>2</TabPanel>
                     <TabPanel>3</TabPanel>
                 </TabBody>
