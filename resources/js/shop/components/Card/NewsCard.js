@@ -7,7 +7,7 @@ import { faClock, faUser } from "@fortawesome/free-solid-svg-icons/index";
 import { Link } from 'react-router-dom';
 
 import { Card } from '@/common/components/Card';
-import { TextButton } from "@/common/components/Button";
+import { TextButton } from '@/common/components/Button';
 
 import { theme, media, colors } from '@utils';
 

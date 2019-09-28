@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const config = require('./webpack.config');
 
 /*
  |--------------------------------------------------------------------------
@@ -19,18 +20,7 @@ const PATHS = {
 
 mix
     .setPublicPath(PATHS.dist)
-    .webpackConfig({
-        resolve: {
-            extensions: [".js", ".jsx"],
-            alias: {
-                "@": __dirname + "/resources/js",
-                "@images": __dirname + "/resources/images",
-                "@lang": __dirname + "/resources/lang",
-                "@utils": __dirname + "/resources/js/common/utils",
-                "@font": __dirname + "/resources/fonts",
-            }
-        }
-    })
+    .webpackConfig(config)
     .options({ processCssUrls: false })
     .react(`${PATHS.src}/js/shop/index.js`, `${PATHS.dist}/js/shop.js`)
     .react(`${PATHS.src}/js/admin/index.js`, `${PATHS.dist}/js/admin.js`)

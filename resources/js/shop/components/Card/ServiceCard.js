@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
 
+import { Link } from 'react-router-dom';
+
 import { Card } from '@/common/components/Card';
 import { TextButton } from "@/common/components/Button";
 import { Badge } from '@/common/components/Badge';
@@ -47,7 +49,7 @@ const StyledServiceCardContentWrapper = styled.div`
     `}
 `;
 
-const StyledServiceCardTitleAnchor = styled.a`
+const StyledServiceCardTitleAnchor = styled(Link)`
     display: block;
 
     margin-bottom: 1em;
@@ -127,16 +129,16 @@ const ServiceCard = (props) => {
             <StyledServiceCardImage src={props.data.image} horizontal={props.horizontal} />
             <StyledServiceCardContentWrapper horizontal={props.horizontal}>
                 <StyledServiceCardContent horizontal={props.horizontal}>
-                    <StyledServiceCardTitleAnchor href="#" horizontal={props.horizontal}>
+                    <StyledServiceCardTitleAnchor to="/service" horizontal={props.horizontal}>
                         <StyledServiceCardTitle horizontal={props.horizontal}>{props.data.name}</StyledServiceCardTitle>
                     </StyledServiceCardTitleAnchor>
                     <p>{props.data.description.short}</p>
                 </StyledServiceCardContent>
                 <StyledServiceCardFooter horizontal={props.horizontal}>
                     <StyledServiceCardPrice horizontal={props.horizontal}>
-                        <Badge>{t('shop:service.price', {price: props.data.price})}</Badge>
+                        <Badge>{t('shop:serviceCard.price', {price: props.data.price})}</Badge>
                     </StyledServiceCardPrice>
-                    <TextButton color='success'>{t('shop:service.select')}</TextButton>
+                    <TextButton color='success' as={Link} to="/service">{t('shop:serviceCard.select')}</TextButton>
                 </StyledServiceCardFooter>
             </StyledServiceCardContentWrapper>
         </StyledServiceCard>

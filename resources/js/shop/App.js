@@ -18,6 +18,7 @@ import { BaseLayout } from "@/shop/components/Layout";
 import News from './pages/News';
 import Shop from './pages/Shop';
 import Post from './pages/Post';
+import Service from './pages/Service';
 
 i18n
     .use(initReactI18next)
@@ -52,6 +53,7 @@ class App extends React.Component {
                     <Route exact path="/" component={News} />
                     <Route path="/shop" component={Shop} />
                     <Route path="/news/post" component={Post} />
+                    <Route path="/service" component={Service} />
                 </BaseLayout>
             </Router>
         );

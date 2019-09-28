@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTranslation } from "react-i18next";
 
 import { Link } from 'react-router-dom';
 
@@ -34,7 +33,9 @@ const StyledBreadcrumbsItem = styled.li`
 const StyledTextButton = styled(BaseButton)`
     padding: 6px 8px;
 
+    color: ${colors.primary};
     font-size: 0.875rem;
+    font-family: 'Roboto Slab', sans-serif;
     font-weight: 400;
     line-height: 1.75;
 
@@ -61,11 +62,9 @@ const StyledTextButton = styled(BaseButton)`
 `;
 
 const BreadcrumbsItem = ({name, translation, to, active}) => {
-    const { t } = useTranslation();
-
     return (
         <StyledBreadcrumbsItem>
-            <StyledTextButton color="info" as={to && Link} to={to} disabled={active}>{name ? name : translation ? t(translation) : 'error'}</StyledTextButton>
+            <StyledTextButton color="info" as={to && Link} to={to} disabled={active}>{name ? name : translation ? translation : 'error'}</StyledTextButton>
         </StyledBreadcrumbsItem>
     );
 };

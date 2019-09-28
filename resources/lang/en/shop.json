@@ -1,8 +1,18 @@
 {
+  "paymentMethods": {
+    "paypal": "PayPal",
+    "psc": "PaySafeCard",
+    "sms": "SMS Premium",
+    "transfer": "Transfer"
+  },
   "sectionHeaders": {
     "shop": "{{name}} server's shop"
   },
   "service": {
+    "lastCustomersTitle": "Recently purchased by:",
+    "pricingTableTitle": "Service cost:"
+  },
+  "serviceCard": {
     "price": "from {{price}} zl",
     "select": "Select"
   }

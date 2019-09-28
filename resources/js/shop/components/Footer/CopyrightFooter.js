@@ -42,7 +42,7 @@ const CopyrightFooter = () => {
 
             </div>
             <div>
-                Proudly powered by <StyledShopLink href="#">vMCShop Standard</StyledShopLink> v3.0-alpha.1
+                Proudly powered by <StyledShopLink href="https://vmcshop.pro/" target="_blank">vMCShop Standard</StyledShopLink> v3.0-alpha.1
             </div>
         </StyledCopyrightFooter>
     );

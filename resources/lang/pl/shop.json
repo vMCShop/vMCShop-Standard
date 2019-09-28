@@ -1,8 +1,18 @@
 {
+  "paymentMethods": {
+    "paypal": "PayPal",
+    "psc": "PaySafeCard",
+    "sms": "SMS Premium",
+    "transfer": "Przelew"
+  },
   "sectionHeaders": {
     "shop": "Sklep serwera {{name}}"
   },
   "service": {
+    "lastCustomersTitle": "Ostatnio tą usługę zakupili:",
+    "pricingTableTitle": "Koszt usługi:"
+  },
+  "serviceCard": {
     "price": "od {{price}} zł",
     "select": "Wybierz"
   }

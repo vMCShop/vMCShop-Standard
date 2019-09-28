@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome/index";
-import {faClock, faUser} from "@fortawesome/free-solid-svg-icons/index";
+import rgba from '@bit/styled-components.polished.color.rgba';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index';
+import { faClock, faUser } from '@fortawesome/free-solid-svg-icons/index';
 
-import { Breadcrumbs } from "@/shop/components/Breadcrumbs";
+import { Breadcrumbs } from '@/shop/components/Breadcrumbs';
 
-import {colors, media, theme} from '@utils';
+import { colors, media, theme } from '@utils';
 
 const PostHeadingGrid = styled.div`
     display: grid;
@@ -20,14 +21,22 @@ const PostHeadingGrid = styled.div`
 const PostImage = styled.img`
   width: 100%;
   
+  margin-bottom: 1.5em;
+  
   border-radius: ${theme.border_radius};
+  
+  box-shadow: 0 2px 5px 0 ${rgba(colors.black ,.16)}, 0 2px 10px 0 ${rgba(colors.black ,.12)};
+  
+  ${media.laptop`
+    margin-bottom: 0;
+  `}
 `;
 
 const PostHeading = styled.div`
 
 `;
 
-const PostTitle = styled.h1`
+const PostTitle = styled.h2`
     margin: 0;
 
     font-family: 'Roboto Slab', sans-serif;
@@ -69,11 +78,18 @@ const PostContent = styled.div`
     line-height: 1.5;
 `;
 
+const breadcrumbsConfig = {
+    page: 'Post',
+    active: {
+        name: 'Hello World with image and content!'
+    }
+};
+
 class Post extends React.Component {
     render() {
         return (
             <>
-                <Breadcrumbs page="Post" />
+                <Breadcrumbs config={breadcrumbsConfig} />
                 <PostHeadingGrid>
                     <PostImage src="https://via.placeholder.com/500" alt="Post image"/>
                     <PostHeading>
