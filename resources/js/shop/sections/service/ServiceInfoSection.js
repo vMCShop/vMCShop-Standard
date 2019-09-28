@@ -7,6 +7,7 @@ import { faMobileAlt, faLock, faCreditCard } from '@fortawesome/free-solid-svg-i
 import { faPaypal } from '@fortawesome/free-brands-svg-icons';
 
 import { Badge } from '@/common/components/Badge';
+import { Tooltip } from "@/common/components/Tooltip";
 
 import { media, colors, theme } from '@utils';
 
@@ -115,14 +116,6 @@ const CustomerHead = styled.img`
     margin: 0 .25em;
     
     border-radius: ${theme.border_radius};
-    
-    &:first-child {
-      margin-left: 0;
-    }
-    
-    &:last-child {
-      margin-right: 0;
-    }
 `;
 
 const ServiceTitle = styled.h2`
@@ -173,13 +166,27 @@ const ServiceInfoSection = () => {
                 </PricingTable>
                 <LastCustomersBoxTitle>{t('shop:service.lastCustomersTitle')}</LastCustomersBoxTitle>
                 <LastCustomersBox>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
-                    <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
+                    <Tooltip title="Verlikylos">
+                        <CustomerHead src="https://crafatar.com/avatars/61296cbd20144ebebfd38695b2a864b3" alt="verlikylos"/>
+                    </Tooltip>
                 </LastCustomersBox>
             </LeftColumn>
             <RightColumn>

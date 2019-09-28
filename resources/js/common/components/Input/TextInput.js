@@ -53,7 +53,7 @@ const StyledInputLabel = styled.label`
     
     pointer-events: none;
     
-    transform: translate(10px, 18px) scale(1);
+    transform: translate(13px, 18px) scale(1);
     
     transition: transform .2s ease-in-out, font-size .2s ease-in-out, color ease-in-out;
     
@@ -62,7 +62,7 @@ const StyledInputLabel = styled.label`
         
         font-size: .65em;
     
-        transform: translate(12px, 0) scale(.98);
+        transform: translate(10px, 0) scale(.98);
     `}
     
     ${({focused}) => focused && `
