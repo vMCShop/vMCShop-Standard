@@ -15,6 +15,7 @@ const StyledTextInput = styled.input`
     z-index: 900;
     
     height: 42px;
+    width: 100%;
     
     margin: 1px;
     padding: calc(.4em + 1px) calc(.65em + 1px);

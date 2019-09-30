@@ -28,10 +28,8 @@ const StyledShopLink = styled.a`
     
     text-decoration: none;
     
-    transition: color .3s ease-in-out;
-    
     &:hover {
-        color: inherit;
+        text-decoration: underline;
     }
 `;
 

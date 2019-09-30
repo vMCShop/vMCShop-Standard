@@ -3,17 +3,39 @@
     "paypal": "PayPal",
     "psc": "PaySafeCard",
     "sms": "SMS Premium",
+    "titles": {
+      "paypal": "Płatność PayPal",
+      "psc": "Płatność PaySafeCard",
+      "sms": "Płatność SMS Premium",
+      "transfer": "Płatność przelewem"
+    },
     "transfer": "Przelew"
   },
   "sectionHeaders": {
     "shop": "Sklep serwera {{name}}"
   },
   "service": {
+    "cta": {
+      "other": "Aby aktywować usługę,{{newline}}wpisz poniżej swój nick z serwera i przejdź dalej.",
+      "sms": "Aby aktywować usługę, wyślij SMS o treści{{newline}}{{smsContent}} pod numer {{smsNumber}}.{{newline}}Otrzymany kod wprowadź poniżej:"
+    },
+    "form": {
+      "button": {
+        "nextStep": "Przejdź dalej",
+        "serviceCheckout": "Zrealizuj usługę"
+      },
+      "input": {
+        "nickname": "Twój nick z serwera",
+        "smsCode": "Kod z SMS"
+      }
+    },
     "lastCustomersTitle": "Ostatnio tą usługę zakupili:",
+    "price": "Koszt: {{price}}",
+    "priceVat": "Koszt: {{price}} zł ({{priceVat}} zł z VAT)",
     "pricingTableTitle": "Koszt usługi:"
   },
   "serviceCard": {
-    "price": "od {{price}} zł",
+    "priceFrom": "od {{price}} zł",
     "select": "Wybierz"
   }
 }

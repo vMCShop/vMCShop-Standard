@@ -20,6 +20,7 @@ const StyledTooltip = styled.span`
     background-color: ${colors.gray};
     
     font-size: .7em;
+    line-height: 1.2;
     color: ${colors.white};
     
     border-radius: ${theme.border_radius};
@@ -42,21 +43,21 @@ class Tooltip extends React.Component {
     }
 
     componentDidMount() {
-        this.animation = TweenMax.set(this.tooltip, {x: this.getTooltipXPosition(), y: this.getTooltipYPosition(), scale: 0.5, opacity: 0});
+        this.animation = TweenMax.set(this.tooltip, {x: this.getTooltipXPosition(), y: this.getTooltipYPosition(), scale: 0.2, opacity: 0});
     }
 
     getTooltipXPosition = () => {
         const { x: boxX, width: boxWidth} = this.tooltipBox.getBoundingClientRect();
         const { width: tooltipWidth } = this.tooltip.getBoundingClientRect();
 
-        return boxX - boxX + boxWidth/2 - tooltipWidth;
+        return boxX - boxX + boxWidth/2 - tooltipWidth/2;
     };
 
     getTooltipYPosition = () => {
         const { y: boxY } = this.tooltipBox.getBoundingClientRect();
         const { height: tooltipHeight } = this.tooltip.getBoundingClientRect();
 
-        return boxY - boxY - tooltipHeight * 2.5;
+        return boxY - boxY - tooltipHeight * 1.5;
     };
 
     handleAppear = () => {
@@ -65,7 +66,7 @@ class Tooltip extends React.Component {
                 visible: true
             };
 
-            this.animation = TweenMax.fromTo(this.tooltip, .2, {x: this.getTooltipXPosition(), y: this.getTooltipYPosition(), scale: 0.5, opacity: 0}, {scale: 1, opacity: 1});
+            this.animation = TweenMax.fromTo(this.tooltip, .2, {scale: 0.5, opacity: 0}, {scale: 1, opacity: 1});
 
             this.setState(state);
         }
@@ -77,7 +78,7 @@ class Tooltip extends React.Component {
                 visible: false
             };
 
-            this.animation = TweenMax.fromTo(this.tooltip, .2, {scale: 1, opacity: 1}, {scale: 0.5, opacity: 0});
+            this.animation = TweenMax.fromTo(this.tooltip, .2, {scale: 1, opacity: 1}, {scale: 0.2, opacity: 0});
 
             this.setState(state);
         }

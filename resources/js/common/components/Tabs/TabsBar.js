@@ -4,6 +4,7 @@ import rgba from '@bit/styled-components.polished.color.rgba';
 import darken from '@bit/styled-components.polished.color.darken';
 import { TweenMax } from 'gsap';
 
+import { Ripple } from '@/common/components/Ripple';
 import BaseButton from "@/common/components/Button/BaseButton";
 
 import { media, colors, theme } from '@utils';
@@ -71,6 +72,12 @@ const StyledButton = styled(BaseButton)`
 
     margin: 0;
     padding: 0;
+    
+    text-transform: none;
+    
+    canvas { 
+        color: ${colors.white};
+    }
 `;
 
 class TabsBar extends React.Component {
@@ -121,6 +128,7 @@ class TabsBar extends React.Component {
                         <StyledTabsListItem key={i}>
                             <StyledButton ref={button => this.tabList[this.tabList.length] = button} onClick={() => this.props.setActiveTabIndex(i, this.updateIndicatorPosition)}>
                                 {item}
+                                <Ripple />
                             </StyledButton>
                         </StyledTabsListItem>
                     ))}

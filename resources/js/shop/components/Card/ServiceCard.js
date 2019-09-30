@@ -136,7 +136,7 @@ const ServiceCard = (props) => {
                 </StyledServiceCardContent>
                 <StyledServiceCardFooter horizontal={props.horizontal}>
                     <StyledServiceCardPrice horizontal={props.horizontal}>
-                        <Badge>{t('shop:serviceCard.price', {price: props.data.price})}</Badge>
+                        <Badge>{t('shop:serviceCard.priceFrom', {price: props.data.price})}</Badge>
                     </StyledServiceCardPrice>
                     <TextButton color='success' as={Link} to="/service">{t('shop:serviceCard.select')}</TextButton>
                 </StyledServiceCardFooter>

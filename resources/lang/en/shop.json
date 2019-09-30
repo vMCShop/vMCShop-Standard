@@ -3,17 +3,39 @@
     "paypal": "PayPal",
     "psc": "PaySafeCard",
     "sms": "SMS Premium",
+    "titles": {
+      "paypal": "Paypment by PayPal",
+      "psc": "Payment by PaySafeCard",
+      "sms": "Payment by SMS Premium",
+      "transfer": "Payment by transfer"
+    },
     "transfer": "Transfer"
   },
   "sectionHeaders": {
     "shop": "{{name}} server's shop"
   },
   "service": {
+    "cta": {
+      "other": "To activate the service,{{newline}}enter below your nickname and go to the next step.",
+      "sms": "To activate the service, send an SMS saying{{newline}}{{smsContent}} to {{smsNumber}}.{{newline}}Received code enter below:"
+    },
+    "form": {
+      "button": {
+        "nextStep": "Next step",
+        "serviceCheckout": "Checkout service"
+      },
+      "input": {
+        "nickname": "Your nickname",
+        "smsCode": "SMS Code"
+      }
+    },
     "lastCustomersTitle": "Recently purchased by:",
+    "price": "Price: {{price}}",
+    "priceVat": "Price: {{price}} zł ({{priceVat}} with taxes)",
     "pricingTableTitle": "Service cost:"
   },
   "serviceCard": {
-    "price": "from {{price}} zl",
+    "priceFrom": "from {{price}} zl",
     "select": "Select"
   }
 }
