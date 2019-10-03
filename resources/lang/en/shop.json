@@ -30,12 +30,18 @@
       }
     },
     "lastCustomersTitle": "Recently purchased by:",
-    "price": "Price: {{price}}",
+    "price": "Price: {{price}} zł",
     "priceVat": "Price: {{price}} zł ({{priceVat}} with taxes)",
     "pricingTableTitle": "Service cost:"
   },
   "serviceCard": {
-    "priceFrom": "from {{price}} zl",
+    "paymentMethods": {
+      "paypal": "PayPal",
+      "psc": "PSC",
+      "sms": "SMS",
+      "transfer": "Transfer"
+    },
+    "price": "{{price}} zł",
     "select": "Select"
   }
 }

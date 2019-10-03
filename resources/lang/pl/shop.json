@@ -30,12 +30,18 @@
       }
     },
     "lastCustomersTitle": "Ostatnio tą usługę zakupili:",
-    "price": "Koszt: {{price}}",
+    "price": "Koszt: {{price}} zł",
     "priceVat": "Koszt: {{price}} zł ({{priceVat}} zł z VAT)",
     "pricingTableTitle": "Koszt usługi:"
   },
   "serviceCard": {
-    "priceFrom": "od {{price}} zł",
+    "paymentMethods": {
+      "paypal": "PayPal",
+      "psc": "PSC",
+      "sms": "SMS",
+      "transfer": "PSC"
+    },
+    "price": "{{price}} zł",
     "select": "Wybierz"
   }
 }
