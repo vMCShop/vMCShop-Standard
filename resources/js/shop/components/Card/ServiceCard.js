@@ -106,22 +106,24 @@ const StyledServiceCardFooter = styled.div`
     `}
 `;
 
-const StyledServiceCardPrice = styled.div`
+const StyledServiceCardPrice = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
     
-    margin-bottom: .75em;
+    margin: 0 0 .75em;
+    padding: 0;
     
     ${({horizontal}) => horizontal && media.laptop`
          margin: 0;
     `};
 `;
 
-const StyledPriceTag = styled.div`
+const StyledPriceTag = styled.li`
     display: flex;
     flex-direction: column;
     
+    margin: 0;
     padding: .25em .75em;
     
     border-right: 1px solid ${rgba(colors.gray, 0.25)};

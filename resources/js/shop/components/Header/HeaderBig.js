@@ -23,7 +23,7 @@ const LogoImage = styled.img`
     width: 75%;
   
     ${media.laptop`
-        width: 30%;
+        width: 25%;
     `}
 `;
 

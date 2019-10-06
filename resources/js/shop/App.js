@@ -13,7 +13,8 @@ import news_pl from '@lang/pl/news.json';
 import navigation_pl from '@lang/pl/navigation.json';
 import shop_pl from '@lang/pl/shop.json';
 
-import { BaseLayout } from "@/shop/components/Layout";
+import { BaseLayout } from "@/common/components/Layout";
+import { ShopLayout } from "@/shop/components/Layout";
 
 import News from './pages/News';
 import Shop from './pages/Shop';
@@ -49,12 +50,13 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <BaseLayout title="vMCShop Standard">
+                <BaseLayout title="vMCShop Standard" />
+                <ShopLayout>
                     <Route exact path="/" component={News} />
                     <Route path="/shop" component={Shop} />
                     <Route path="/news/post" component={Post} />
                     <Route path="/service" component={Service} />
-                </BaseLayout>
+                </ShopLayout>
             </Router>
         );
     }

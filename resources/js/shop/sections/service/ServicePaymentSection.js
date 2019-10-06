@@ -40,12 +40,6 @@ const FormGroup = styled.div`
     
     div {
         width: 100%;
-    
-        margin-top: 1em;
-        
-        &:first-child {
-            margin-top: 0;
-        }
         
         ${media.tablet`
             width: 50%;

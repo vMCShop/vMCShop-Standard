@@ -7,8 +7,10 @@ import { colors, theme } from '@utils';
 const StyledInputWrapper = styled.div`
     position: relative;
     
+    margin-top: .5em;
     padding: .25em;
 `;
+
 
 const StyledTextInput = styled.input`
     position: relative;
