@@ -19,8 +19,20 @@
     ·
     <a href="https://vmcshop.pro/discord">Discord</a>
   </p>
-  
-  
+  <p align="center">
+    <a href="https://app.buddy.works/verlikylos/vmcshop-standard/pipelines/pipeline/207429">
+      <img src="https://app.buddy.works/verlikylos/vmcshop-standard/pipelines/pipeline/207429/badge.svg?token=e80f8d30530d872290b72d51feb73ab8c0e7eb21119e80670fb0d9eec2a4152f" alt="buddy" />
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/packagist/dm/vmcshop/vmcshop-standard" alt="packagist" />
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/github/v/release/vmcshop/vmcshop-standard?include_prereleases&sort=semver" alt="latest version" />
+    </a>
+    <a href="https://vmcshop.pro/discord">
+      <img src="https://img.shields.io/discord/411286006646702081?label=discord" alt="discord" />
+    </a>
+  </p>
 </p>
 
 
