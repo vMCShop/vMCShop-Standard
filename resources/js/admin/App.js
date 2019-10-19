@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { BaseLayout } from '@/common/components/Layout';
 
@@ -7,7 +7,6 @@ import Login from './pages/Login';
 import NotFound from './pages/errors/NotFound';
 
 class App extends React.Component {
-
     render() {
         return (
             <Router>
@@ -19,7 +18,6 @@ class App extends React.Component {
             </Router>
         );
     }
-
 }
 
 export default App;

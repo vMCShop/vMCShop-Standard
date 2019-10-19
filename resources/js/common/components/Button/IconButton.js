@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import rgba from '@bit/styled-components.polished.color.rgba';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import BaseButton from '@/common/components/Button/BaseButton';
 import { Ripple } from '@/common/components/Ripple';
@@ -28,28 +28,36 @@ const StyledIconButton = styled(BaseButton)`
         background-color: ${rgba(colors.black, 0.08)};
     }
 
-    ${({size}) => size === 'xs' && `
+    ${({ size }) =>
+        size === 'xs' &&
+        `
         width: 34px;
         height: 34px;
 
         padding: 2px;
     `}
 
-    ${({size}) => size === 'sm' && `
+    ${({ size }) =>
+        size === 'sm' &&
+        `
         width: 36px;
         height: 36px;
 
         padding: 3px;
     `}
 
-    ${({size}) => size === 'lg' && `
+    ${({ size }) =>
+        size === 'lg' &&
+        `
         width: 50px;
         height: 50px;
 
         padding: 10px;
     `}
 
-    ${({color}) => color === 'primary' && `
+    ${({ color }) =>
+        color === 'primary' &&
+        `
         color: ${colors.primary};
 
         &:hover {
@@ -57,7 +65,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'secondary' && `
+    ${({ color }) =>
+        color === 'secondary' &&
+        `
         color: ${colors.secondary};
 
         &:hover {
@@ -65,7 +75,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'success' && `
+    ${({ color }) =>
+        color === 'success' &&
+        `
         color: ${colors.success};
 
         &:hover {
@@ -73,7 +85,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'danger' && `
+    ${({ color }) =>
+        color === 'danger' &&
+        `
         color: ${colors.danger};
 
         &:hover {
@@ -81,7 +95,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'warning' && `
+    ${({ color }) =>
+        color === 'warning' &&
+        `
         color: ${colors.warning};
 
         &:hover {
@@ -89,7 +105,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'info' && `
+    ${({ color }) =>
+        color === 'info' &&
+        `
         color: ${colors.info};
 
         &:hover {
@@ -97,7 +115,9 @@ const StyledIconButton = styled(BaseButton)`
         }
     `}
 
-    ${({disabled}) => disabled && `
+    ${({ disabled }) =>
+        disabled &&
+        `
         color: rgba(0, 0, 0, 0.26);
 
         cursor: default;
@@ -108,7 +128,7 @@ const StyledIconButton = styled(BaseButton)`
     `}
 `;
 
-const IconButton = (props) => {
+const IconButton = props => {
     let size = 'shrink-2';
 
     if (props.size === 'xs') {
@@ -124,7 +144,7 @@ const IconButton = (props) => {
             <FontAwesomeIcon icon={props.icon} transform={size} fixedWidth />
             {props.disabled ? '' : <Ripple />}
         </StyledIconButton>
-    )
-}
+    );
+};
 
 export default IconButton;

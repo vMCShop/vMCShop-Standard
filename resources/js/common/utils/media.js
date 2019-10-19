@@ -4,7 +4,7 @@ export const sizes = {
     desktop: 1200,
     laptop: 992,
     tablet: 768,
-    phone: 576
+    phone: 576,
 };
 
 export default Object.keys(sizes).reduce((acc, label) => {

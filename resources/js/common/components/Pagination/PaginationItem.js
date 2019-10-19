@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+    faChevronLeft,
+    faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { Button, IconButton, TextButton } from '@/common/components/Button';
 
@@ -9,7 +12,7 @@ const StyledListItem = styled.li`
     margin-right: 3px;
 `;
 
-const PaginationItem = (props) => {
+const PaginationItem = props => {
     if (props.arrowLeft) {
         return (
             <StyledListItem as="li">
@@ -28,11 +31,15 @@ const PaginationItem = (props) => {
 
     return (
         <StyledListItem as="li">
-            {props.active ?
-                <Button color="primary" size="sm">{props.children}</Button>
-            :
-                <TextButton color="primary" size="sm">{props.children}</TextButton>
-            }
+            {props.active ? (
+                <Button color="primary" size="sm">
+                    {props.children}
+                </Button>
+            ) : (
+                <TextButton color="primary" size="sm">
+                    {props.children}
+                </TextButton>
+            )}
         </StyledListItem>
     );
 };

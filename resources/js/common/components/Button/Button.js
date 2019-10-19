@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import darken from '@bit/styled-components.polished.color.darken';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import BaseButton from '@/common/components/Button/BaseButton';
 import { Ripple } from '@/common/components/Ripple';
@@ -35,31 +35,42 @@ const StyledButton = styled(BaseButton)`
         background-color: ${darken(0.045, colors.default)};
     }
 
-    ${({withLeftIcon}) => withLeftIcon && `
+    ${({ withLeftIcon }) =>
+        withLeftIcon &&
+        `
         svg {
             margin-right: 6px;
         }
     `}
 
-    ${({withRightIcon}) => withRightIcon && `
-        svg {
-            margin-left: 6px;
-        }
-    `}
+    ${({ withRightIcon }) =>
+        withRightIcon &&
+        `
+            svg {
+                margin-left: 6px;
+            }
+        `
+    }
 
-    ${({size}) => size === 'sm' && `
+    ${({ size }) =>
+        size === 'sm' &&
+        `
         padding: 4px 8px;
 
         font-size: 0.8125rem;
     `}
 
-    ${({size}) => size === 'lg' && `
+    ${({ size }) =>
+        size === 'lg' &&
+        `
         padding: 8px 24px;
 
         font-size: 0.9375rem;
     `}
 
-    ${({color}) => color === 'primary' && `
+    ${({ color }) =>
+        color === 'primary' &&
+        `
         color: ${colors.white};
         background-color: ${colors.primary};
 
@@ -68,7 +79,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'secondary' && `
+    ${({ color }) =>
+        color === 'secondary' &&
+        `
         color: ${colors.white};
         background-color: ${colors.secondary};
 
@@ -77,7 +90,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'success' && `
+    ${({ color }) =>
+        color === 'success' &&
+        `
         color: ${colors.white};
         background-color: ${colors.success};
 
@@ -86,7 +101,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'danger' && `
+    ${({ color }) =>
+        color === 'danger' &&
+        `
         color: ${colors.white};
         background-color: ${colors.danger};
 
@@ -95,7 +112,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'warning' && `
+    ${({ color }) =>
+        color === 'warning' &&
+        `
         color: ${colors.white};
         background-color: ${colors.warning};
 
@@ -104,7 +123,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'info' && `
+    ${({ color }) =>
+        color === 'info' &&
+        `
         color: ${colors.white};
         background-color: ${colors.info};
 
@@ -113,7 +134,9 @@ const StyledButton = styled(BaseButton)`
         }
     `}
 
-    ${({disabled}) => disabled && `
+    ${({ disabled }) =>
+        disabled &&
+        `
         color: rgba(0, 0, 0, 0.26);
 
         background-color: rgba(0, 0, 0, 0.12);
@@ -128,7 +151,7 @@ const StyledButton = styled(BaseButton)`
     `}
 `;
 
-const Button = (props) => {
+const Button = props => {
     let size = '';
 
     if (props.size === 'lg') {
@@ -137,12 +160,20 @@ const Button = (props) => {
 
     return (
         <StyledButton {...props}>
-            {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} transform={size} /> : ''}
+            {props.withLeftIcon ? (
+                <FontAwesomeIcon icon={props.withLeftIcon} transform={size} />
+            ) : (
+                ''
+            )}
             {props.children}
-            {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} transform={size} /> : ''}
+            {props.withRightIcon ? (
+                <FontAwesomeIcon icon={props.withRightIcon} transform={size} />
+            ) : (
+                ''
+            )}
             {props.disabled ? '' : <Ripple />}
         </StyledButton>
-    )
-}
+    );
+};
 
 export default Button;

@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 import { ServiceCard } from '@/shop/components/Card';
 import { Pagination } from '@/common/components/Pagination';
@@ -13,30 +13,33 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 35px;
-    
+
     ${media.tablet`
         grid-template-columns: 1fr 1fr;
     `}
 `;
 
-const ServicesSection = (props) => {
+const ServicesSection = props => {
     const { t } = useTranslation();
 
     return (
         <div>
-            <h2><FontAwesomeIcon icon={faShoppingBasket} /> {t('shop:sectionHeaders.shop', {name: 'Hardcore'})}</h2>
+            <h2>
+                <FontAwesomeIcon icon={faShoppingBasket} />{' '}
+                {t('shop:sectionHeaders.shop', { name: 'Hardcore' })}
+            </h2>
 
-            {props.horizontal ?
+            {props.horizontal ? (
                 props.data.map(service => (
                     <ServiceCard key={service.id} data={service} horizontal />
                 ))
-            :
+            ) : (
                 <Grid>
                     {props.data.map(service => (
                         <ServiceCard key={service.id} data={service} />
                     ))}
                 </Grid>
-            }
+            )}
 
             <Pagination />
         </div>

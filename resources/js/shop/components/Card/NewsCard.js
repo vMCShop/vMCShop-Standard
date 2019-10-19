@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/index";
-import { faClock, faUser } from "@fortawesome/free-solid-svg-icons/index";
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index';
+import { faClock, faUser } from '@fortawesome/free-solid-svg-icons/index';
 
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ const StyledNewsCardImage = styled.img`
 `;
 
 const StyledNewsCardContentWrapper = styled.div`
-    padding: 1.5em 1.25em .75em 1.25em;
+    padding: 1.5em 1.25em 0.75em 1.25em;
 
     ${media.laptop`
         display: flex;
@@ -62,11 +62,10 @@ const StyledNewsCardTitle = styled.h2`
 `;
 
 const StyledNewsCardContent = styled.div`
-
     p {
-        margin-bottom: .5em;
+        margin-bottom: 0.5em;
 
-        font-size: .9rem;
+        font-size: 0.9rem;
         font-weight: 300;
         line-height: 1.5;
     }
@@ -87,7 +86,7 @@ const StyledNewsCardDate = styled.p`
     margin: 1em 0;
 
     color: ${colors.gray};
-    font-size: .7rem;
+    font-size: 0.7rem;
     font-weight: 400;
 
     text-align: center;
@@ -95,27 +94,37 @@ const StyledNewsCardDate = styled.p`
     white-space: nowrap;
 
     svg:last-child {
-        margin-left: 1em
+        margin-left: 1em;
     }
 `;
 
-const NewsCard = (props) => {
+const NewsCard = props => {
     const { t } = useTranslation();
 
     return (
         <StyledNewsCard as="article">
-            {props.data.image !== null && <StyledNewsCardImage src={props.data.image} />}
+            {props.data.image !== null && (
+                <StyledNewsCardImage src={props.data.image} />
+            )}
             <StyledNewsCardContentWrapper>
                 <StyledNewsCardContent>
-                    <StyledNewsCardTitle as={Link} to="/news/post">{props.data.title}</StyledNewsCardTitle>
+                    <StyledNewsCardTitle as={Link} to="/news/post">
+                        {props.data.title}
+                    </StyledNewsCardTitle>
                     <p>{props.data.content.short}</p>
                 </StyledNewsCardContent>
                 <StyledNewsCardFooter>
                     <StyledNewsCardDate>
-                        <FontAwesomeIcon icon={faClock} transform="shrink-1" />&nbsp;{props.data.date.forHuman}
-                        <FontAwesomeIcon icon={faUser} transform="shrink-1" />&nbsp;{props.data.author}
+                        <FontAwesomeIcon icon={faClock} transform="shrink-1" />
+                        &nbsp;{props.data.date.forHuman}
+                        <FontAwesomeIcon icon={faUser} transform="shrink-1" />
+                        &nbsp;{props.data.author}
                     </StyledNewsCardDate>
-                    {props.data.content.long !== null && <TextButton color="success" as={Link} to="/news/post">{t('news:post.readMore')}</TextButton>}
+                    {props.data.content.long !== null && (
+                        <TextButton color="success" as={Link} to="/news/post">
+                            {t('news:post.readMore')}
+                        </TextButton>
+                    )}
                 </StyledNewsCardFooter>
             </StyledNewsCardContentWrapper>
         </StyledNewsCard>

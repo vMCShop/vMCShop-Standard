@@ -8,11 +8,7 @@ const StyledTab = styled.span`
 `;
 
 const Tab = ({ children }) => {
-  return (
-    <StyledTab>
-        {children}
-    </StyledTab>
-  );
+    return <StyledTab>{children}</StyledTab>;
 };
 
 export default Tab;

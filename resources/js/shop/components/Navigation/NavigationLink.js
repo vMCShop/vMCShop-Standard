@@ -10,11 +10,11 @@ import { theme, media, colors } from '@utils';
 
 const PosedNavigationLink = posed.li({
     mainMenuOpen: {
-        opacity: 1
+        opacity: 1,
     },
     mainMenuClosed: {
-        opacity: 0
-    }
+        opacity: 0,
+    },
 });
 
 const StyledNavigationLink = styled(PosedNavigationLink)`
@@ -30,21 +30,22 @@ const StyledNavigationLink = styled(PosedNavigationLink)`
         display: flex;
         align-items: center;
 
-        padding: .93em;
+        padding: 0.93em;
 
-        font-size: .8rem;
+        font-size: 0.8rem;
         font-weight: 300;
         color: ${colors.primary};
 
         text-decoration: none;
         text-transform: uppercase;
 
-        background-color: ${({active}) => active ? rgba(colors.black, 0.1) : 'transparent'};
+        background-color: ${({ active }) =>
+            active ? rgba(colors.black, 0.1) : 'transparent'};
 
         border-radius: calc(${theme.border_radius} / 2);
 
         svg {
-            margin-right: .2em;
+            margin-right: 0.2em;
         }
 
         span {
@@ -58,7 +59,8 @@ const StyledNavigationLink = styled(PosedNavigationLink)`
         a {
             color: ${colors.white};
 
-            background-color: ${({active}) => active ? rgba(colors.white, 0.1) : 'transparent'};
+            background-color: ${({ active }) =>
+                active ? rgba(colors.white, 0.1) : 'transparent'};
         }
     `}
 `;

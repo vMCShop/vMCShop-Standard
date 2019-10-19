@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import rgba from '@bit/styled-components.polished.color.rgba';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import BaseButton from '@/common/components/Button/BaseButton';
 import { Ripple } from '@/common/components/Ripple';
@@ -30,31 +30,41 @@ const StyledTextButton = styled(BaseButton)`
         background-color: ${rgba(colors.black, 0.08)};
     }
 
-    ${({withLeftIcon}) => withLeftIcon && `
+    ${({ withLeftIcon }) =>
+        withLeftIcon &&
+        `
         svg {
             margin-right: 6px;
         }
     `}
 
-    ${({withRightIcon}) => withRightIcon && `
+    ${({ withRightIcon }) =>
+        withRightIcon &&
+        `
         svg {
             margin-left: 6px;
         }
     `}
 
-    ${({size}) => size === 'sm' && `
+    ${({ size }) =>
+        size === 'sm' &&
+        `
         padding: 4px 8px;
 
         font-size: 0.8125rem;
     `}
 
-    ${({size}) => size === 'lg' && `
+    ${({ size }) =>
+        size === 'lg' &&
+        `
         padding: 8px 24px;
 
         font-size: 0.9375rem;
     `}
 
-    ${({color}) => color === 'primary' && `
+    ${({ color }) =>
+        color === 'primary' &&
+        `
         color: ${colors.primary};
 
         &:hover {
@@ -62,7 +72,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'secondary' && `
+    ${({ color }) =>
+        color === 'secondary' &&
+        `
         color: ${colors.secondary};
 
         &:hover {
@@ -70,7 +82,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'success' && `
+    ${({ color }) =>
+        color === 'success' &&
+        `
         color: ${colors.success};
 
         &:hover {
@@ -78,7 +92,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'danger' && `
+    ${({ color }) =>
+        color === 'danger' &&
+        `
         color: ${colors.danger};
 
         &:hover {
@@ -86,7 +102,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'warning' && `
+    ${({ color }) =>
+        color === 'warning' &&
+        `
         color: ${colors.warning};
 
         &:hover {
@@ -94,7 +112,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({color}) => color === 'info' && `
+    ${({ color }) =>
+        color === 'info' &&
+        `
         color: ${colors.info};
 
         &:hover {
@@ -102,7 +122,9 @@ const StyledTextButton = styled(BaseButton)`
         }
     `}
 
-    ${({disabled}) => disabled && `
+    ${({ disabled }) =>
+        disabled &&
+        `
         color: rgba(0, 0, 0, 0.26);
 
         box-shadow: none;
@@ -115,15 +137,23 @@ const StyledTextButton = styled(BaseButton)`
     `}
 `;
 
-const TextButton = (props) => {
+const TextButton = props => {
     return (
         <StyledTextButton {...props}>
-            {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} /> : ''}
+            {props.withLeftIcon ? (
+                <FontAwesomeIcon icon={props.withLeftIcon} />
+            ) : (
+                ''
+            )}
             {props.children}
-            {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} /> : ''}
+            {props.withRightIcon ? (
+                <FontAwesomeIcon icon={props.withRightIcon} />
+            ) : (
+                ''
+            )}
             {props.disabled ? '' : <Ripple />}
         </StyledTextButton>
-    )
-}
+    );
+};
 
 export default TextButton;

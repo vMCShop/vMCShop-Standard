@@ -12,7 +12,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 35px;
-    
+
     ${media.laptop`
         grid-template-columns: 1fr 2fr;
     `}
@@ -26,7 +26,7 @@ const serverStatuses = [
         address: 'hc.vmcshop.pro',
         players: 235,
         maxPlayers: 500,
-        version: '1.14.2'
+        version: '1.14.2',
     },
     {
         id: 2,
@@ -35,7 +35,7 @@ const serverStatuses = [
         address: 'sv.vmcshop.pro',
         players: 124,
         maxPlayers: 300,
-        version: '1.14.2'
+        version: '1.14.2',
     },
     {
         id: 3,
@@ -44,8 +44,8 @@ const serverStatuses = [
         address: 'mg.vmcshop.pro',
         players: 784,
         maxPlayers: 1000,
-        version: '1.14.2'
-    }
+        version: '1.14.2',
+    },
 ];
 
 const services = [
@@ -54,74 +54,80 @@ const services = [
         name: 'Ranga VIP',
         image: 'https://via.placeholder.com/500',
         description: {
-            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
-            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+            short:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
         },
         price: {
             sms: '12,07',
             psc: '12,00',
             paypal: '10,00',
-            transfer: '11,00'
-        }
+            transfer: '11,00',
+        },
     },
     {
         id: 2,
         name: 'Ranga VIP',
         image: 'https://via.placeholder.com/500',
         description: {
-            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
-            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+            short:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
         },
         price: {
             sms: '12,07',
             psc: '12,00',
             paypal: '10,00',
-            transfer: '11,00'
-        }
+            transfer: '11,00',
+        },
     },
     {
         id: 3,
         name: 'Ranga VIP',
         image: 'https://via.placeholder.com/500',
         description: {
-            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
-            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+            short:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
         },
         price: {
             sms: '12,07',
             psc: '12,00',
             paypal: '10,00',
-            transfer: '11,00'
-        }
+            transfer: '11,00',
+        },
     },
     {
         id: 4,
         name: 'Ranga VIP',
         image: 'https://via.placeholder.com/500',
         description: {
-            short: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
-            long: 'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.'
+            short:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
+            long:
+                'Sit amet, consectetur adipiscing elit. Nulla sit amet ultrices justo. Sed rutrum pulvinar laoreet. Nam vitae sollicitudin dolor, in feugiat ex. Aenean laoreet quis sapien at ultrices. Vestibulum vitae feugiat velit. Nullam varius ipsum est.',
         },
         price: {
             sms: '12,07',
             psc: '12,00',
             paypal: '10,00',
-            transfer: '11,00'
-        }
-    }
+            transfer: '11,00',
+        },
+    },
 ];
 
 class Shop extends React.Component {
-
     render() {
         return (
             <Grid>
                 <SidebarSection serverStatuses={serverStatuses} />
                 <ServicesSection horizontal data={services} />
             </Grid>
-        )
+        );
     }
-
 }
 
 export default Shop;

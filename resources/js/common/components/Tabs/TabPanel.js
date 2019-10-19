@@ -7,11 +7,7 @@ const StyledTabPanel = styled.div`
 `;
 
 const TabPanel = ({ children }) => {
-    return (
-        <StyledTabPanel>
-            {children}
-        </StyledTabPanel>
-    );
+    return <StyledTabPanel>{children}</StyledTabPanel>;
 };
 
 export default TabPanel;

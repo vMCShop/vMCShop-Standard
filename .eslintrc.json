@@ -5,7 +5,9 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "airbnb-base",
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -19,8 +21,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
+        "indent": ["warn", 4],
+        "prettier/prettier": ["error"]
     }
 }

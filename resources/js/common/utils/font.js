@@ -1,5 +1,9 @@
-export default function fontFace(name, src, fontWeight = 'normal', fontStyle = 'normal'){
-
+export default function fontFace(
+    name,
+    src,
+    fontWeight = 'normal',
+    fontStyle = 'normal'
+) {
     return `
         @font-face{
             font-family: "${name}";
@@ -8,5 +12,5 @@ export default function fontFace(name, src, fontWeight = 'normal', fontStyle = '
             font-style: ${fontStyle};
             font-weight: ${fontWeight};
         }
-    `
+    `;
 }

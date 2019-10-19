@@ -11,5 +11,5 @@ export default {
 
     white: '#ffffff',
     black: '#000000',
-    gray: '#777777'
-}
+    gray: '#777777',
+};

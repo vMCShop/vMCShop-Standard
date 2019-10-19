@@ -3,16 +3,13 @@ import styled from 'styled-components';
 
 import PaginationItem from './PaginationItem';
 
-
-const StyledPagination = styled.nav`
-
-`;
+const StyledPagination = styled.nav``;
 
 const StyledList = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     padding: 0;
 
     list-style: none;

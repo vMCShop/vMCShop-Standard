@@ -10,11 +10,11 @@ const breadcrumbsConfig = {
     server: {
         id: 1,
         name: 'Hardcore',
-        href: '/shop'
+        href: '/shop',
     },
     active: {
-        name: 'Ranga VIP'
-    }
+        name: 'Ranga VIP',
+    },
 };
 
 class Service extends React.Component {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 import { Navigation, NavigationLink } from '@/shop/components/Navigation';
 import { Container } from '@/common/components/Container';
@@ -40,23 +40,27 @@ const ShopLayout = ({ children, title }) => {
         <>
             <Navigation>
                 <NavigationLink to="/">
-                    <FontAwesomeIcon icon={faHome} size="2x" transform='shrink-4' />
+                    <FontAwesomeIcon
+                        icon={faHome}
+                        size="2x"
+                        transform="shrink-4"
+                    />
                     <span>{t('navigation:homepage')}</span>
                 </NavigationLink>
                 <NavigationLink to="/shop">
-                    <FontAwesomeIcon icon={faShoppingBasket} size="2x" transform='shrink-4' />
+                    <FontAwesomeIcon
+                        icon={faShoppingBasket}
+                        size="2x"
+                        transform="shrink-4"
+                    />
                     <span>{t('navigation:store')}</span>
                 </NavigationLink>
             </Navigation>
 
-            <HeaderBig>
-
-            </HeaderBig>
+            <HeaderBig></HeaderBig>
 
             <StyledMain as="main">
-                <Container>
-                    {children}
-                </Container>
+                <Container>{children}</Container>
             </StyledMain>
 
             <CopyrightFooter />

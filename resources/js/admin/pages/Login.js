@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Container} from '@/common/components/Container';
+import { Container } from '@/common/components/Container';
 import { Card } from '@/common/components/Card';
 import { TextInput, Checkbox } from '@/common/components/Input';
 import { Button } from '@/common/components/Button';
@@ -12,17 +12,17 @@ import background from '@images/header-background.png';
 import logo from '@images/logo.png';
 
 const LoginBoxWrapper = styled.main`
-  height: 100vh;
-  
-  background: url(${background}) center center no-repeat;
+    height: 100vh;
+
+    background: url(${background}) center center no-repeat;
 `;
 
 const StyledContainer = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
 `;
 
 const LoginBox = styled(Card)`
@@ -32,17 +32,17 @@ const LoginBox = styled(Card)`
     align-items: center;
 
     padding: 3em 1.25em 5em;
-    
+
     width: 100%;
-    
+
     ${media.tablet`
         width: 75%;
     `}
-    
+
     ${media.laptop`
         width: 55%;
     `};
-    
+
     ${media.desktop`
         width: 40%;
     `}
@@ -53,7 +53,7 @@ const LoginSectionHeader = styled.h1`
 
     font-weight: 500;
     font-size: 1.2em;
-    
+
     text-align: center;
 `;
 
@@ -80,20 +80,23 @@ const LogoImage = styled.img`
 `;
 
 class Login extends React.Component {
-
     render() {
         return (
             <LoginBoxWrapper>
                 <StyledContainer>
                     <LoginBox>
-                        <LogoImage src={logo} alt="logo"/>
-                        <LoginSectionHeader>Logowanie do ACP</LoginSectionHeader>
+                        <LogoImage src={logo} alt="logo" />
+                        <LoginSectionHeader>
+                            Logowanie do ACP
+                        </LoginSectionHeader>
                         <FormGroup>
                             <TextInput label="Login" />
                             <TextInput label="Hasło" />
                             <Checkbox color="info" label="Zapamiętaj mnie" />
                         </FormGroup>
-                        <Button size="lg" color="success">Zaloguj</Button>
+                        <Button size="lg" color="success">
+                            Zaloguj
+                        </Button>
                     </LoginBox>
                 </StyledContainer>
             </LoginBoxWrapper>
