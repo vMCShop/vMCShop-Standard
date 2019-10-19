@@ -26,9 +26,9 @@ const StyledContainer = styled.div`
   `}
 `;
 
-const Container = ({ children }) => {
+const Container = ({ className, children }) => {
     return (
-        <StyledContainer>
+        <StyledContainer className={className}>
             {children}
         </StyledContainer>
     );

@@ -41622,7 +41622,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50650,8 +50650,28 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    width: 50%;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n        width: 70%;\n    "]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n        width: 90%;\n    "]);
+  var data = _taggedTemplateLiteral(["\n        width: 70%;\n    "]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -50661,7 +50681,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    \n    margin: 0 0 2em;\n    \n    ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n        width: 70%;\n    "]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -50671,7 +50691,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    margin: 0 0 2em;\n\n    font-weight: 500;\n    font-size: 1.5em;\n    \n    text-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 80%;\n    \n    margin: 0 0 2em;\n    \n    ", "\n    \n    ", "\n    \n    ", "\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -50681,7 +50701,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n\n    padding: 5em 1.25em;\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin: 0 0 2em;\n\n    font-weight: 500;\n    font-size: 1.2em;\n    \n    text-align: center;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -50691,7 +50711,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    width: 50%;\n"]);
+  var data = _taggedTemplateLiteral(["\n        width: 40%;\n    "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -50701,7 +50721,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    background: url(", ") center center;\n    \n    border-top-left-radius: ", ";\n    border-bottom-left-radius: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n        width: 55%;\n    "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -50711,7 +50731,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n        grid-template-columns: 2fr 1fr;\n    "]);
+  var data = _taggedTemplateLiteral(["\n        width: 75%;\n    "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -50721,7 +50741,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr;\n    column-gap: 0;\n    \n    ", "\n    \n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n\n    padding: 3em 1.25em 5em;\n    \n    width: 100%;\n    \n    ", "\n    \n    ", ";\n    \n    ", "\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -50731,7 +50751,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    padding: 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  \n  height: 100vh;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -50741,7 +50761,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  \n  height: 100vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 100vh;\n  \n  background: url(", ") center center no-repeat;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -50761,14 +50781,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var LoginBoxWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].main(_templateObject());
-var LoginBox = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_common_components_Card__WEBPACK_IMPORTED_MODULE_3__["Card"])(_templateObject2());
-var Grid = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3(), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].laptop(_templateObject4()));
-var ImageSection = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject5(), _images_header_background_png__WEBPACK_IMPORTED_MODULE_7___default.a, _utils__WEBPACK_IMPORTED_MODULE_6__["theme"].border_radius, _utils__WEBPACK_IMPORTED_MODULE_6__["theme"].border_radius);
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject6());
-var LoginSection = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject7());
-var LoginSectionHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject8());
-var FormGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject9(), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].laptop(_templateObject10()));
+var LoginBoxWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].main(_templateObject(), _images_header_background_png__WEBPACK_IMPORTED_MODULE_7___default.a);
+var StyledContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_common_components_Container__WEBPACK_IMPORTED_MODULE_2__["Container"])(_templateObject2());
+var LoginBox = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_common_components_Card__WEBPACK_IMPORTED_MODULE_3__["Card"])(_templateObject3(), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].tablet(_templateObject4()), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].laptop(_templateObject5()), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].desktop(_templateObject6()));
+var LoginSectionHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject7());
+var FormGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8(), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].tablet(_templateObject9()), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].laptop(_templateObject10()), _utils__WEBPACK_IMPORTED_MODULE_6__["media"].desktop(_templateObject11()));
+var LogoImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject12());
 
 var Login =
 /*#__PURE__*/
@@ -50784,9 +50802,10 @@ function (_React$Component) {
   _createClass(Login, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBoxWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Container__WEBPACK_IMPORTED_MODULE_2__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBox, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Grid, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImageSection, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
-        src: _images_logo_png__WEBPACK_IMPORTED_MODULE_8___default.a
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginSection, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginSectionHeader, null, "Logowanie do ACP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FormGroup, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Input__WEBPACK_IMPORTED_MODULE_4__["TextInput"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBoxWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledContainer, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginBox, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LogoImage, {
+        src: _images_logo_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+        alt: "logo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginSectionHeader, null, "Logowanie do ACP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FormGroup, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Input__WEBPACK_IMPORTED_MODULE_4__["TextInput"], {
         label: "Login"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Input__WEBPACK_IMPORTED_MODULE_4__["TextInput"], {
         label: "Has\u0142o"
@@ -50796,7 +50815,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_components_Button__WEBPACK_IMPORTED_MODULE_5__["Button"], {
         size: "lg",
         color: "success"
-      }, "Zaloguj"))))));
+      }, "Zaloguj"))));
     }
   }]);
 
@@ -51391,8 +51410,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var StyledContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), _utils__WEBPACK_IMPORTED_MODULE_2__["media"].phone(_templateObject2()), _utils__WEBPACK_IMPORTED_MODULE_2__["media"].tablet(_templateObject3()), _utils__WEBPACK_IMPORTED_MODULE_2__["media"].laptop(_templateObject4()), _utils__WEBPACK_IMPORTED_MODULE_2__["media"].desktop(_templateObject5()));
 
 var Container = function Container(_ref) {
-  var children = _ref.children;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledContainer, null, children);
+  var className = _ref.className,
+      children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledContainer, {
+    className: className
+  }, children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Container);
