@@ -12,8 +12,7 @@ import { media, colors, theme } from '@utils';
 const StyledTabsBar = styled.nav`
     position: relative;
 
-    box-shadow: 0 2px 5px 0 ${rgba(colors.black, 0.16)},
-        0 2px 10px 0 ${rgba(colors.black, 0.12)};
+    box-shadow: 0 2px 5px 0 ${rgba(colors.black, 0.16)}, 0 2px 10px 0 ${rgba(colors.black, 0.12)};
 `;
 
 const StyledTabsList = styled.ul`
@@ -106,17 +105,13 @@ class TabsBar extends React.Component {
 
     getIndicatorPosition = () => {
         const { x: firstX } = this.tabList[0].getBoundingClientRect();
-        const { x: currentX } = this.tabList[
-            this.props.getActiveTabIndex()
-        ].getBoundingClientRect();
+        const { x: currentX } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
 
         return currentX - firstX;
     };
 
     getItemWidth = () => {
-        const { width } = this.tabList[
-            this.props.getActiveTabIndex()
-        ].getBoundingClientRect();
+        const { width } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
 
         return width;
     };
@@ -136,15 +131,8 @@ class TabsBar extends React.Component {
                     {this.props.children.map((item, i) => (
                         <StyledTabsListItem key={i}>
                             <StyledButton
-                                ref={button =>
-                                    (this.tabList[this.tabList.length] = button)
-                                }
-                                onClick={() =>
-                                    this.props.setActiveTabIndex(
-                                        i,
-                                        this.updateIndicatorPosition
-                                    )
-                                }
+                                ref={button => (this.tabList[this.tabList.length] = button)}
+                                onClick={() => this.props.setActiveTabIndex(i, this.updateIndicatorPosition)}
                             >
                                 {item}
                                 <Ripple />

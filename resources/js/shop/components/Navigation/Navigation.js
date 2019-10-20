@@ -34,10 +34,10 @@ const StyledNavigation = styled.nav`
     ${({ isMenuHavingBackground }) =>
         isMenuHavingBackground &&
         `
-    padding: .75em 0;
-  
-    background-color: ${colors.primary};
-  `};
+            padding: .75em 0;
+          
+            background-color: ${colors.primary};
+        `};
 
     transition: background-color 0.1s ease-in-out, padding 0.15s ease;
 `;

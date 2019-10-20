@@ -27,5 +27,8 @@
     "rules": {
         "indent": ["warn", 4],
         "prettier/prettier": ["error"]
+    },
+    "settings": {
+        "import/resolver": "webpack"
     }
 }

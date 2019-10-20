@@ -57,7 +57,7 @@ const ShopLayout = ({ children, title }) => {
                 </NavigationLink>
             </Navigation>
 
-            <HeaderBig></HeaderBig>
+            <HeaderBig />
 
             <StyledMain as="main">
                 <Container>{children}</Container>

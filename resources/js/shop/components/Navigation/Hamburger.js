@@ -3,14 +3,19 @@ import styled from 'styled-components';
 
 import { media, colors } from '@utils';
 
-const StyledHamburgerWrapper = styled.div`
+const StyledHamburgerWrapper = styled.button`
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: relative;
-
     padding: 20px;
+
+    background-color: transparent;
+
+    border: none;
+    outline: none;
 
     cursor: pointer;
 
@@ -50,21 +55,20 @@ const StyledHamburger = styled.div`
     ${({ open }) =>
         open &&
         `
-    background-color: transparent !important;
-  
-    ::before {
-        transition: top .2s, transform .2s .2s;
-        top: 0;
-        transform: rotate(45deg);
-    }
-    
-    ::after {
-        transition: top .2s, transform .2s .2s;
-        top: 0;
-        transform: rotate(-45deg);
-    }
-  
-  `}
+        background-color: transparent !important;
+      
+        ::before {
+            transition: top .2s, transform .2s .2s;
+            top: 0;
+            transform: rotate(45deg);
+        }
+        
+        ::after {
+            transition: top .2s, transform .2s .2s;
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    `}
 `;
 
 const Hamburger = props => {
