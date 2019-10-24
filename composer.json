@@ -1,0 +1,30 @@
+{
+    "name": "vmcshop/vmcshop-standard",
+    "description": "Najnowszy wymiar automatycznego sklepu Minecraft!",
+    "version": "3.0.0-alpha.1",
+    "type": "project",
+    "keywords": ["vmcshop", "vmcshop-standard", "standard", "vmc", "shop", "sklep", "minecraft", "itemshop", "smsshop", "sms", "verlikylos"],
+    "homepage": "https://vmcshop.pro/",
+    "readme": "https://github.com/vMCShop/vMCShop-Standard/blob/master/README.md",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Kamil Twardowski",
+            "email": "hello@verlikylos.dev",
+            "homepage": "https://verlikylos.dev/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@vmcshop.pro",
+        "docs": "https://vmcshop.pro/dosc/standard",
+        "forum": "https://forum.vmcshop.pro/",
+        "chat": "https://vmcshop.pro/discord",
+        "issues": "https://github.com/vMCShop/vMCShop-Standard/issues",
+        "source": "https://github.com/vMCShop/vMCShop-Standard"
+    },
+    "require": {
+        "php": "^7.1.3",
+        "laravel/framework": "^6.0"
+    }
+  }
