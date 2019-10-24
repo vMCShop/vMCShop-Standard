@@ -7,22 +7,21 @@ import { NewsCard } from '@/shop/components/Card';
 import { Pagination } from '@/common/components/Pagination';
 
 const NewsSection = props => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div>
-            <h2>
-                <FontAwesomeIcon icon={faNewspaper} />{' '}
-                {t('news:sectionHeaders.news')}
-            </h2>
+  return (
+    <div>
+      <h2>
+        <FontAwesomeIcon icon={faNewspaper} /> {t('news:sectionHeaders.news')}
+      </h2>
 
-            {props.data.map(news => (
-                <NewsCard key={news.id} data={news} />
-            ))}
+      {props.data.map(news => (
+        <NewsCard key={news.id} data={news} />
+      ))}
 
-            <Pagination />
-        </div>
-    );
+      <Pagination />
+    </div>
+  );
 };
 
 export default NewsSection;

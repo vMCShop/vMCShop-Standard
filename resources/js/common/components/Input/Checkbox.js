@@ -11,11 +11,11 @@ import { colors, theme } from '@utils';
 import check_solid from '@images/svg/check-solid.svg';
 
 const InputGroup = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 `;
 
 const StyledInputWrapper = styled.div`
@@ -41,48 +41,48 @@ const StyledInputWrapper = styled.div`
     }
     
     ${({ color }) =>
-        color === 'primary' &&
-        `
+      color === 'primary' &&
+      `
         &:hover {
             background-color: ${rgba(colors.primary, 0.08)};
         }
     `}
 
     ${({ color }) =>
-        color === 'secondary' &&
-        `
+      color === 'secondary' &&
+      `
         &:hover {
             background-color: ${rgba(colors.secondary, 0.08)};
         }
     `}
 
     ${({ color }) =>
-        color === 'success' &&
-        `
+      color === 'success' &&
+      `
         &:hover {
             background-color: ${rgba(colors.success, 0.08)};
         }
     `}
 
     ${({ color }) =>
-        color === 'danger' &&
-        `
+      color === 'danger' &&
+      `
         &:hover {
             background-color: ${rgba(colors.danger, 0.08)};
         }
     `}
 
     ${({ color }) =>
-        color === 'warning' &&
-        `
+      color === 'warning' &&
+      `
         &:hover {
             background-color: ${rgba(colors.warning, 0.08)};
         }
     `}
 
     ${({ color }) =>
-        color === 'info' &&
-        `
+      color === 'info' &&
+      `
         &:hover {
             background-color: ${rgba(colors.info, 0.08)};
         }
@@ -108,43 +108,43 @@ const StyledCheckbox = styled.input`
         }
         
         ${({ color }) =>
-            color === 'primary' &&
-            `
+          color === 'primary' &&
+          `
             background-color: ${colors.primary};
             border-color: ${colors.primary};
         `}
     
         ${({ color }) =>
-            color === 'secondary' &&
-            `
+          color === 'secondary' &&
+          `
             background-color: ${colors.secondary};
             border-color: ${colors.secondary};
         `}
     
         ${({ color }) =>
-            color === 'success' &&
-            `
+          color === 'success' &&
+          `
             background-color: ${colors.success};
             border-color: ${colors.success};
         `}
     
         ${({ color }) =>
-            color === 'danger' &&
-            `
+          color === 'danger' &&
+          `
             background-color: ${colors.danger};
             border-color: ${colors.danger};
         `}
     
         ${({ color }) =>
-            color === 'warning' &&
-            `
+          color === 'warning' &&
+          `
             background-color: ${colors.warning};
             border-color: ${colors.warning};
         `}
     
         ${({ color }) =>
-            color === 'info' &&
-            `
+          color === 'info' &&
+          `
             background-color: ${colors.info};
             border-color: ${colors.info};
         `}
@@ -152,71 +152,63 @@ const StyledCheckbox = styled.input`
 `;
 
 const StyledCheckMark = styled.span`
-    height: 18px;
-    width: 18px;
+  height: 18px;
+  width: 18px;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    border: 2px solid ${colors.gray};
-    border-radius: calc(${theme.border_radius} / 2);
+  border: 2px solid ${colors.gray};
+  border-radius: calc(${theme.border_radius} / 2);
 
-    &:after {
-        content: '';
-        mask: url(${check_solid});
-        mask-size: cover;
+  &:after {
+    content: '';
+    mask: url(${check_solid});
+    mask-size: cover;
 
-        display: none;
+    display: none;
 
-        width: 14px;
-        height: 14px;
+    width: 14px;
+    height: 14px;
 
-        background-color: ${colors.gray};
+    background-color: ${colors.gray};
 
-        ${({ color }) =>
-            color &&
-            `
+    ${({ color }) =>
+      color &&
+      `
             background-color: ${colors.white};
         `}
-    }
+  }
 `;
 
 const StyledCheckboxLabel = styled.label`
-    font-size: 0.9rem;
-    font-weight: 300;
-    line-height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1rem;
 `;
 
 class Checkbox extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.input = null;
-    }
+    this.input = null;
+  }
 
-    handleChangeCheckboxState() {
-        console.log(this.input);
-    }
+  handleChangeCheckboxState() {
+    console.log(this.input);
+  }
 
-    render() {
-        return (
-            <InputGroup onClick={this.handleChangeCheckboxState}>
-                <StyledInputWrapper color={this.props.color}>
-                    <StyledCheckbox
-                        type="checkbox"
-                        ref={input => (this.input = input)}
-                        color={this.props.color}
-                    />
-                    <StyledCheckMark color={this.props.color} />
-                    <Ripple recenter={true} />
-                </StyledInputWrapper>
-                {this.props.label && (
-                    <StyledCheckboxLabel>
-                        {this.props.label}
-                    </StyledCheckboxLabel>
-                )}
-            </InputGroup>
-        );
-    }
+  render() {
+    return (
+      <InputGroup onClick={this.handleChangeCheckboxState}>
+        <StyledInputWrapper color={this.props.color}>
+          <StyledCheckbox type="checkbox" ref={input => (this.input = input)} color={this.props.color} />
+          <StyledCheckMark color={this.props.color} />
+          <Ripple recenter={true} />
+        </StyledInputWrapper>
+        {this.props.label && <StyledCheckboxLabel>{this.props.label}</StyledCheckboxLabel>}
+      </InputGroup>
+    );
+  }
 }
 
 export default Checkbox;

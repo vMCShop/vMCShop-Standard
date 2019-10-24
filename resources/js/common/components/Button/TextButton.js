@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 import rgba from '@bit/styled-components.polished.color.rgba';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import BaseButton from '@/common/components/Button/BaseButton';
@@ -31,40 +32,40 @@ const StyledTextButton = styled(BaseButton)`
     }
 
     ${({ withLeftIcon }) =>
-        withLeftIcon &&
-        `
+      withLeftIcon &&
+      `
         svg {
             margin-right: 6px;
         }
     `}
 
     ${({ withRightIcon }) =>
-        withRightIcon &&
-        `
+      withRightIcon &&
+      `
         svg {
             margin-left: 6px;
         }
     `}
 
     ${({ size }) =>
-        size === 'sm' &&
-        `
+      size === 'sm' &&
+      `
         padding: 4px 8px;
 
         font-size: 0.8125rem;
     `}
 
     ${({ size }) =>
-        size === 'lg' &&
-        `
+      size === 'lg' &&
+      `
         padding: 8px 24px;
 
         font-size: 0.9375rem;
     `}
 
     ${({ color }) =>
-        color === 'primary' &&
-        `
+      color === 'primary' &&
+      `
         color: ${colors.primary};
 
         &:hover {
@@ -73,8 +74,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'secondary' &&
-        `
+      color === 'secondary' &&
+      `
         color: ${colors.secondary};
 
         &:hover {
@@ -83,8 +84,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'success' &&
-        `
+      color === 'success' &&
+      `
         color: ${colors.success};
 
         &:hover {
@@ -93,8 +94,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'danger' &&
-        `
+      color === 'danger' &&
+      `
         color: ${colors.danger};
 
         &:hover {
@@ -103,8 +104,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'warning' &&
-        `
+      color === 'warning' &&
+      `
         color: ${colors.warning};
 
         &:hover {
@@ -113,8 +114,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'info' &&
-        `
+      color === 'info' &&
+      `
         color: ${colors.info};
 
         &:hover {
@@ -123,8 +124,8 @@ const StyledTextButton = styled(BaseButton)`
     `}
 
     ${({ disabled }) =>
-        disabled &&
-        `
+      disabled &&
+      `
         color: rgba(0, 0, 0, 0.26);
 
         box-shadow: none;
@@ -137,23 +138,38 @@ const StyledTextButton = styled(BaseButton)`
     `}
 `;
 
-const TextButton = props => {
-    return (
-        <StyledTextButton {...props}>
-            {props.withLeftIcon ? (
-                <FontAwesomeIcon icon={props.withLeftIcon} />
-            ) : (
-                ''
-            )}
-            {props.children}
-            {props.withRightIcon ? (
-                <FontAwesomeIcon icon={props.withRightIcon} />
-            ) : (
-                ''
-            )}
-            {props.disabled ? '' : <Ripple />}
-        </StyledTextButton>
-    );
+const TextButton = ({ children, size, color, withLeftIcon, withRightIcon, disabled }) => {
+  return (
+    <StyledTextButton
+      size={size}
+      color={color}
+      withLeftIcon={withLeftIcon}
+      withRightIcon={withRightIcon}
+      disabled={disabled}
+    >
+      {withLeftIcon && <FontAwesomeIcon icon={withLeftIcon} />}
+      {children}
+      {withRightIcon && <FontAwesomeIcon icon={withRightIcon} />}
+      {!disabled && <Ripple />}
+    </StyledTextButton>
+  );
+};
+
+TextButton.defaultProps = {
+  size: 'md',
+  color: 'default',
+  withLeftIcon: null,
+  withRightIcon: null,
+  disabled: false,
+};
+
+TextButton.propTypes = {
+  children: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'success', 'danger', 'warning', 'info']),
+  withLeftIcon: PropTypes.object,
+  withRightIcon: PropTypes.object,
+  disabled: PropTypes.bool,
 };
 
 export default TextButton;

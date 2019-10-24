@@ -32,40 +32,40 @@ const StyledOutlinedButton = styled(BaseButton)`
     }
 
     ${({ withLeftIcon }) =>
-        withLeftIcon &&
-        `
+      withLeftIcon &&
+      `
         svg {
             margin-right: 6px;
         }
     `}
 
     ${({ withRightIcon }) =>
-        withRightIcon &&
-        `
+      withRightIcon &&
+      `
         svg {
             margin-left: 6px;
         }
     `}
 
     ${({ size }) =>
-        size === 'sm' &&
-        `
+      size === 'sm' &&
+      `
         padding: 4px 8px;
 
         font-size: 0.8125rem;
     `}
 
     ${({ size }) =>
-        size === 'lg' &&
-        `
+      size === 'lg' &&
+      `
         padding: 8px 24px;
 
         font-size: 0.9375rem;
     `}
 
     ${({ color }) =>
-        color === 'primary' &&
-        `
+      color === 'primary' &&
+      `
         color: ${colors.primary};
 
         border: 1px solid ${rgba(colors.primary, 0.5)};
@@ -76,8 +76,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'secondary' &&
-        `
+      color === 'secondary' &&
+      `
         color: ${colors.secondary};
 
         border: 1px solid ${rgba(colors.secondary, 0.5)};
@@ -88,8 +88,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'success' &&
-        `
+      color === 'success' &&
+      `
         color: ${colors.success};
 
         border: 1px solid ${rgba(colors.success, 0.5)};
@@ -100,8 +100,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'danger' &&
-        `
+      color === 'danger' &&
+      `
         color: ${colors.danger};
 
         border: 1px solid ${rgba(colors.danger, 0.5)};
@@ -112,8 +112,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'warning' &&
-        `
+      color === 'warning' &&
+      `
         color: ${colors.warning};
 
         border: 1px solid ${rgba(colors.warning, 0.5)};
@@ -124,8 +124,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ color }) =>
-        color === 'info' &&
-        `
+      color === 'info' &&
+      `
         color: ${colors.info};
 
         border: 1px solid ${rgba(colors.info, 0.5)};
@@ -136,8 +136,8 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 
     ${({ disabled }) =>
-        disabled &&
-        `
+      disabled &&
+      `
         color: rgba(0, 0, 0, 0.26);
 
         border: 1px solid ${rgba(colors.black, 0.26)};
@@ -153,22 +153,14 @@ const StyledOutlinedButton = styled(BaseButton)`
 `;
 
 const OutlinedButton = props => {
-    return (
-        <StyledOutlinedButton {...props}>
-            {props.withLeftIcon ? (
-                <FontAwesomeIcon icon={props.withLeftIcon} />
-            ) : (
-                ''
-            )}
-            {props.children}
-            {props.withRightIcon ? (
-                <FontAwesomeIcon icon={props.withRightIcon} />
-            ) : (
-                ''
-            )}
-            {props.disabled ? '' : <Ripple />}
-        </StyledOutlinedButton>
-    );
+  return (
+    <StyledOutlinedButton {...props}>
+      {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} /> : ''}
+      {props.children}
+      {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} /> : ''}
+      {props.disabled ? '' : <Ripple />}
+    </StyledOutlinedButton>
+  );
 };
 
 export default OutlinedButton;

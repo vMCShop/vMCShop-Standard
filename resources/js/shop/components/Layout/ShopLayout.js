@@ -34,38 +34,30 @@ const StyledMain = styled(Card)`
 `;
 
 const ShopLayout = ({ children, title }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <>
-            <Navigation>
-                <NavigationLink to="/">
-                    <FontAwesomeIcon
-                        icon={faHome}
-                        size="2x"
-                        transform="shrink-4"
-                    />
-                    <span>{t('navigation:homepage')}</span>
-                </NavigationLink>
-                <NavigationLink to="/shop">
-                    <FontAwesomeIcon
-                        icon={faShoppingBasket}
-                        size="2x"
-                        transform="shrink-4"
-                    />
-                    <span>{t('navigation:store')}</span>
-                </NavigationLink>
-            </Navigation>
+  return (
+    <>
+      <Navigation>
+        <NavigationLink to="/">
+          <FontAwesomeIcon icon={faHome} size="2x" transform="shrink-4" />
+          <span>{t('navigation:homepage')}</span>
+        </NavigationLink>
+        <NavigationLink to="/shop">
+          <FontAwesomeIcon icon={faShoppingBasket} size="2x" transform="shrink-4" />
+          <span>{t('navigation:store')}</span>
+        </NavigationLink>
+      </Navigation>
 
-            <HeaderBig />
+      <HeaderBig />
 
-            <StyledMain as="main">
-                <Container>{children}</Container>
-            </StyledMain>
+      <StyledMain as="main">
+        <Container>{children}</Container>
+      </StyledMain>
 
-            <CopyrightFooter />
-        </>
-    );
+      <CopyrightFooter />
+    </>
+  );
 };
 
 export default ShopLayout;

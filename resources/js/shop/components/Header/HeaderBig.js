@@ -7,32 +7,32 @@ import headerBackground from '@images/header-background.png';
 import headerLogo from '@images/logo.png';
 
 const StyledHeaderBig = styled.header`
-    position: relative;
-    z-index: -100;
+  position: relative;
+  z-index: -100;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    height: 60vh;
+  height: 60vh;
 
-    background: url(${headerBackground}) no-repeat center;
+  background: url(${headerBackground}) no-repeat center;
 `;
 
 const LogoImage = styled.img`
-    width: 75%;
+  width: 75%;
 
-    ${media.laptop`
+  ${media.laptop`
         width: 25%;
     `}
 `;
 
 const HeaderBig = () => {
-    return (
-        <StyledHeaderBig>
-            <LogoImage src={headerLogo} />
-        </StyledHeaderBig>
-    );
+  return (
+    <StyledHeaderBig>
+      <LogoImage src={headerLogo} />
+    </StyledHeaderBig>
+  );
 };
 
 export default HeaderBig;

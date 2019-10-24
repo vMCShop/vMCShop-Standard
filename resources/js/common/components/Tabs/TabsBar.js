@@ -10,140 +10,140 @@ import BaseButton from '@/common/components/Button/BaseButton';
 import { media, colors, theme } from '@utils';
 
 const StyledTabsBar = styled.nav`
-    position: relative;
+  position: relative;
 
-    box-shadow: 0 2px 5px 0 ${rgba(colors.black, 0.16)}, 0 2px 10px 0 ${rgba(colors.black, 0.12)};
+  box-shadow: 0 2px 5px 0 ${rgba(colors.black, 0.16)}, 0 2px 10px 0 ${rgba(colors.black, 0.12)};
 `;
 
 const StyledTabsList = styled.ul`
-    list-style: none;
+  list-style: none;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    min-height: 50px;
+  min-height: 50px;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    background-color: ${colors.primary};
+  background-color: ${colors.primary};
 
-    border-top-left-radius: ${theme.border_radius};
-    border-top-right-radius: ${theme.border_radius};
+  border-top-left-radius: ${theme.border_radius};
+  border-top-right-radius: ${theme.border_radius};
 
-    ${media.tablet`
+  ${media.tablet`
         flex-direction: row;
     `}
 `;
 
 const StyledIndicator = styled.span`
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
-    height: 3px;
-    width: 100px;
+  height: 3px;
+  width: 100px;
 
-    background-color: ${colors.success};
+  background-color: ${colors.success};
 `;
 
 const StyledTabsListItem = styled.li`
-    width: 100%;
-    height: 100%;
-    min-height: 50px;
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
 
-    border-bottom: 1px solid ${darken(0.1, colors.primary)};
+  border-bottom: 1px solid ${darken(0.1, colors.primary)};
 
-    ${media.tablet`
+  ${media.tablet`
     border-bottom: 0;
   `}
 `;
 
 const StyledButton = styled(BaseButton)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    height: 100%;
-    min-height: 50px;
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    text-transform: none;
+  text-transform: none;
 
-    canvas {
-        color: ${colors.white};
-    }
+  canvas {
+    color: ${colors.white};
+  }
 `;
 
 class TabsBar extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.tabList = [];
-        this.indicator = null;
-        this.activeTabIndex = 0;
-        this.indicatorAnimation = null;
-    }
+    this.tabList = [];
+    this.indicator = null;
+    this.activeTabIndex = 0;
+    this.indicatorAnimation = null;
+  }
 
-    componentDidMount() {
-        this.indicatorAnimation = TweenMax.set(this.indicator, {
-            x: this.getIndicatorPosition() / 2,
-            width: this.getItemWidth(),
-        });
+  componentDidMount() {
+    this.indicatorAnimation = TweenMax.set(this.indicator, {
+      x: this.getIndicatorPosition() / 2,
+      width: this.getItemWidth(),
+    });
 
-        window.addEventListener('resize', this.updateIndicatorPosition);
-    }
+    window.addEventListener('resize', this.updateIndicatorPosition);
+  }
 
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateIndicatorPosition);
-    }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIndicatorPosition);
+  }
 
-    getIndicatorPosition = () => {
-        const { x: firstX } = this.tabList[0].getBoundingClientRect();
-        const { x: currentX } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
+  getIndicatorPosition = () => {
+    const { x: firstX } = this.tabList[0].getBoundingClientRect();
+    const { x: currentX } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
 
-        return currentX - firstX;
-    };
+    return currentX - firstX;
+  };
 
-    getItemWidth = () => {
-        const { width } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
+  getItemWidth = () => {
+    const { width } = this.tabList[this.props.getActiveTabIndex()].getBoundingClientRect();
 
-        return width;
-    };
+    return width;
+  };
 
-    updateIndicatorPosition = () => {
-        this.indicatorAnimation = TweenMax.to(this.indicator, 0.4, {
-            x: this.getIndicatorPosition(),
-            width: this.getItemWidth(),
-            ease: 'Power4',
-        });
-    };
+  updateIndicatorPosition = () => {
+    this.indicatorAnimation = TweenMax.to(this.indicator, 0.4, {
+      x: this.getIndicatorPosition(),
+      width: this.getItemWidth(),
+      ease: 'Power4',
+    });
+  };
 
-    render() {
-        return (
-            <StyledTabsBar>
-                <StyledTabsList>
-                    {this.props.children.map((item, i) => (
-                        <StyledTabsListItem key={i}>
-                            <StyledButton
-                                ref={button => (this.tabList[this.tabList.length] = button)}
-                                onClick={() => this.props.setActiveTabIndex(i, this.updateIndicatorPosition)}
-                            >
-                                {item}
-                                <Ripple />
-                            </StyledButton>
-                        </StyledTabsListItem>
-                    ))}
-                </StyledTabsList>
-                <StyledIndicator ref={span => (this.indicator = span)} />
-            </StyledTabsBar>
-        );
-    }
+  render() {
+    return (
+      <StyledTabsBar>
+        <StyledTabsList>
+          {this.props.children.map((item, i) => (
+            <StyledTabsListItem key={i}>
+              <StyledButton
+                ref={button => (this.tabList[this.tabList.length] = button)}
+                onClick={() => this.props.setActiveTabIndex(i, this.updateIndicatorPosition)}
+              >
+                {item}
+                <Ripple />
+              </StyledButton>
+            </StyledTabsListItem>
+          ))}
+        </StyledTabsList>
+        <StyledIndicator ref={span => (this.indicator = span)} />
+      </StyledTabsBar>
+    );
+  }
 }
 
 export default TabsBar;

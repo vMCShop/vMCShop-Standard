@@ -6,20 +6,19 @@ import { faServer } from '@fortawesome/free-solid-svg-icons';
 import { ServerStatusCard } from '@/shop/components/Card';
 
 const SidebarSection = props => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div>
-            <h2>
-                <FontAwesomeIcon icon={faServer} />{' '}
-                {t('common:sectionHeaders.serverStatus')}
-            </h2>
+  return (
+    <div>
+      <h2>
+        <FontAwesomeIcon icon={faServer} /> {t('common:sectionHeaders.serverStatus')}
+      </h2>
 
-            {props.serverStatuses.map(serverStatus => (
-                <ServerStatusCard key={serverStatus.id} data={serverStatus} />
-            ))}
-        </div>
-    );
+      {props.serverStatuses.map(serverStatus => (
+        <ServerStatusCard key={serverStatus.id} data={serverStatus} />
+      ))}
+    </div>
+  );
 };
 
 export default SidebarSection;

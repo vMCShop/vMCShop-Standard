@@ -12,10 +12,10 @@ import { TextButton } from '@/common/components/Button';
 import { theme, media, colors } from '@utils';
 
 const StyledNewsCard = styled(Card)`
-    margin-bottom: 1.5em;
-    padding: 0;
+  margin-bottom: 1.5em;
+  padding: 0;
 
-    ${media.laptop`
+  ${media.laptop`
         display: flex;
         flex-direction: row;
 
@@ -24,12 +24,12 @@ const StyledNewsCard = styled(Card)`
 `;
 
 const StyledNewsCardImage = styled.img`
-    width: 100%;
+  width: 100%;
 
-    border-top-left-radius: ${theme.border_radius};
-    border-top-right-radius: ${theme.border_radius};
+  border-top-left-radius: ${theme.border_radius};
+  border-top-right-radius: ${theme.border_radius};
 
-    ${media.laptop`
+  ${media.laptop`
         width: 250px;
 
         border-top-left-radius: ${theme.border_radius};
@@ -39,9 +39,9 @@ const StyledNewsCardImage = styled.img`
 `;
 
 const StyledNewsCardContentWrapper = styled.div`
-    padding: 1.5em 1.25em 0.75em 1.25em;
+  padding: 1.5em 1.25em 0.75em 1.25em;
 
-    ${media.laptop`
+  ${media.laptop`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -51,30 +51,30 @@ const StyledNewsCardContentWrapper = styled.div`
 `;
 
 const StyledNewsCardTitle = styled.h2`
-    margin-top: 0;
+  margin-top: 0;
 
-    font-family: 'Roboto Slab', sans-serif;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: ${colors.primary};
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: ${colors.primary};
 
-    text-decoration: none;
+  text-decoration: none;
 `;
 
 const StyledNewsCardContent = styled.div`
-    p {
-        margin-bottom: 0.5em;
+  p {
+    margin-bottom: 0.5em;
 
-        font-size: 0.9rem;
-        font-weight: 300;
-        line-height: 1.5;
-    }
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
 `;
 
 const StyledNewsCardFooter = styled.div`
-    text-align: center;
+  text-align: center;
 
-    ${media.laptop`
+  ${media.laptop`
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -83,52 +83,50 @@ const StyledNewsCardFooter = styled.div`
 `;
 
 const StyledNewsCardDate = styled.p`
-    margin: 1em 0;
+  margin: 1em 0;
 
-    color: ${colors.gray};
-    font-size: 0.7rem;
-    font-weight: 400;
+  color: ${colors.gray};
+  font-size: 0.7rem;
+  font-weight: 400;
 
-    text-align: center;
+  text-align: center;
 
-    white-space: nowrap;
+  white-space: nowrap;
 
-    svg:last-child {
-        margin-left: 1em;
-    }
+  svg:last-child {
+    margin-left: 1em;
+  }
 `;
 
 const NewsCard = props => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <StyledNewsCard as="article">
-            {props.data.image !== null && (
-                <StyledNewsCardImage src={props.data.image} />
-            )}
-            <StyledNewsCardContentWrapper>
-                <StyledNewsCardContent>
-                    <StyledNewsCardTitle as={Link} to="/news/post">
-                        {props.data.title}
-                    </StyledNewsCardTitle>
-                    <p>{props.data.content.short}</p>
-                </StyledNewsCardContent>
-                <StyledNewsCardFooter>
-                    <StyledNewsCardDate>
-                        <FontAwesomeIcon icon={faClock} transform="shrink-1" />
-                        &nbsp;{props.data.date.forHuman}
-                        <FontAwesomeIcon icon={faUser} transform="shrink-1" />
-                        &nbsp;{props.data.author}
-                    </StyledNewsCardDate>
-                    {props.data.content.long !== null && (
-                        <TextButton color="success" as={Link} to="/news/post">
-                            {t('news:post.readMore')}
-                        </TextButton>
-                    )}
-                </StyledNewsCardFooter>
-            </StyledNewsCardContentWrapper>
-        </StyledNewsCard>
-    );
+  return (
+    <StyledNewsCard as="article">
+      {props.data.image !== null && <StyledNewsCardImage src={props.data.image} />}
+      <StyledNewsCardContentWrapper>
+        <StyledNewsCardContent>
+          <StyledNewsCardTitle as={Link} to="/news/post">
+            {props.data.title}
+          </StyledNewsCardTitle>
+          <p>{props.data.content.short}</p>
+        </StyledNewsCardContent>
+        <StyledNewsCardFooter>
+          <StyledNewsCardDate>
+            <FontAwesomeIcon icon={faClock} transform="shrink-1" />
+            &nbsp;{props.data.date.forHuman}
+            <FontAwesomeIcon icon={faUser} transform="shrink-1" />
+            &nbsp;{props.data.author}
+          </StyledNewsCardDate>
+          {props.data.content.long !== null && (
+            <TextButton color="success" as={Link} to="/news/post">
+              {t('news:post.readMore')}
+            </TextButton>
+          )}
+        </StyledNewsCardFooter>
+      </StyledNewsCardContentWrapper>
+    </StyledNewsCard>
+  );
 };
 
 export default NewsCard;

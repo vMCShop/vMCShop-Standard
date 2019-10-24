@@ -22,41 +22,41 @@ import Post from './pages/Post';
 import Service from './pages/Service';
 
 i18n.use(initReactI18next).init({
-    resources: {
-        en: {
-            common: common_en,
-            news: news_en,
-            navigation: navigation_en,
-            shop: shop_en,
-        },
-        pl: {
-            common: common_pl,
-            news: news_pl,
-            navigation: navigation_pl,
-            shop: shop_pl,
-        },
+  resources: {
+    en: {
+      common: common_en,
+      news: news_en,
+      navigation: navigation_en,
+      shop: shop_en,
     },
-    lng: 'pl',
-    fallbackLng: 'en',
-    interpolation: {
-        escapeValue: false,
+    pl: {
+      common: common_pl,
+      news: news_pl,
+      navigation: navigation_pl,
+      shop: shop_pl,
     },
+  },
+  lng: 'pl',
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
 });
 
 class App extends React.Component {
-    render() {
-        return (
-            <Router>
-                <BaseLayout title="vMCShop Standard" />
-                <ShopLayout>
-                    <Route exact path="/" component={News} />
-                    <Route path="/shop" component={Shop} />
-                    <Route path="/news/post" component={Post} />
-                    <Route path="/service" component={Service} />
-                </ShopLayout>
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Router>
+        <BaseLayout title="vMCShop Standard" />
+        <ShopLayout>
+          <Route exact path="/" component={News} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/news/post" component={Post} />
+          <Route path="/service" component={Service} />
+        </ShopLayout>
+      </Router>
+    );
+  }
 }
 
 export default App;

@@ -1,10 +1,5 @@
-export default function fontFace(
-    name,
-    src,
-    fontWeight = 'normal',
-    fontStyle = 'normal'
-) {
-    return `
+export default function fontFace(name, src, fontWeight = 'normal', fontStyle = 'normal') {
+  return `
         @font-face{
             font-family: "${name}";
             src: url(${require('@font/' + src + '.ttf')}) format("truetype");

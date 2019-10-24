@@ -1,12 +1,17 @@
 {
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": false,
+        "codeFrame": false
+    },
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb-base",
+        "airbnb",
         "prettier"
     ],
     "globals": {
@@ -25,8 +30,24 @@
         "prettier"
     ],
     "rules": {
-        "indent": ["warn", 4],
-        "prettier/prettier": ["error"]
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ],
+        "prefer-promise-reject-errors": [
+            "off"
+        ],
+        "react/jsx-filename-extension": [
+            "off"
+        ],
+        "react/prop-types": [
+            "warn"
+        ],
+        "no-return-assign": [
+            "off"
+        ]
     },
     "settings": {
         "import/resolver": "webpack"

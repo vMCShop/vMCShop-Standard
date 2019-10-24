@@ -1,43 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
+import rgba from '@bit/styled-components.polished.color.rgba';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 
 import { colors, media } from '@utils';
 
 import Sidebar from '@/admin/components/Sidebar/Sidebar';
-import rgba from '@bit/styled-components.polished.color.rgba';
 
 const Grid = styled.div`
-    display: grid;
-    grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: auto 1fr;
 `;
 
 const StyledMain = styled.main`
-    // box-shadow: 0 2px 5px 0 ${rgba(colors.black, 0.16)},
-    //     0 2px 10px 0 ${rgba(colors.black, 0.12)};
+  padding: 0 2em;
 `;
 
-const BreadcrumbsHolder = styled.div`
-    height: 75px;
+const Navbar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
-    border-bottom: 1px solid ${rgba(colors.gray, 0.2)};
+  height: 75px;
+
+  margin-bottom: 2em;
+
+  border-bottom: 1px solid ${rgba(colors.gray, 0.2)};
+`;
+
+const StyledHeader = styled.h1`
+  margin: 0;
+
+  svg {
+    margin-right: 0.5em;
+  }
 `;
 
 class AdminLayout extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <Grid>
-                <Sidebar />
-                <StyledMain>
-                    <BreadcrumbsHolder>asd</BreadcrumbsHolder>
-                    {this.props.children}
-                </StyledMain>
-            </Grid>
-        );
-    }
+  render() {
+    return (
+      <Grid>
+        <Sidebar />
+        <StyledMain>
+          <Navbar>
+            <StyledHeader>
+              <FontAwesomeIcon icon={faDesktop} />
+              Dashboard
+            </StyledHeader>
+          </Navbar>
+          {this.props.children}
+        </StyledMain>
+      </Grid>
+    );
+  }
 }
 
 export default AdminLayout;

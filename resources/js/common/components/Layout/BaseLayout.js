@@ -44,16 +44,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const BaseLayout = ({ title }) => {
-    return (
-        <>
-            <Helmet>
-                <html lang="pl" />
-                <title>{title}</title>
-            </Helmet>
+  return (
+    <>
+      <Helmet>
+        <html lang="pl" />
+        <title>{title}</title>
+      </Helmet>
 
-            <GlobalStyle />
-        </>
-    );
+      <GlobalStyle />
+    </>
+  );
 };
 
 export default BaseLayout;
