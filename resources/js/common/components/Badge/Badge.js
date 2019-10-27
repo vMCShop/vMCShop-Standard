@@ -6,6 +6,7 @@ const Badge = styled.span`
   margin: 0.5em;
   padding: 0.3em 0.8em;
 
+  font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
   color: ${colors.white};

@@ -83,19 +83,16 @@ const ModuleCard = ({ config }) => {
             </TextButton>
           ))}
         </div>
-        {enabled ? (
-          <div>
-            <Tooltip title="Ustawienia">
-              <IconButton size="xs" icon={faCogs} />
-            </Tooltip>
+        <div>
+          <Tooltip title="Ustawienia">
+            <IconButton size="xs" icon={faCogs} />
+          </Tooltip>
+          {enabled ? (
             <TextButton color="danger">Dezaktywuj</TextButton>
-          </div>
-        ) : (
-          <div>
-            <IconButton size="xs" icon={faCogs} disabled />
+          ) : (
             <TextButton color="success">Aktywuj</TextButton>
-          </div>
-        )}
+          )}
+        </div>
       </CardFooter>
     </StyledModuleCard>
   );

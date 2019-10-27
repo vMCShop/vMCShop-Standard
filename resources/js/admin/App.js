@@ -9,6 +9,7 @@ import NotFound from './pages/errors/NotFound';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Modules from './pages/Modules';
+import Servers from './pages/Servers';
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
               <Switch>
                 <Route path="/admin/dashboard" component={Dashboard} />
                 <Route path="/admin/users" component={Users} />
+                <Route path="/admin/servers" component={Servers} />
                 <Route path="/admin/modules" component={Modules} />
               </Switch>
             </AdminLayout>
