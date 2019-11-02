@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import Helmet from 'react-helmet';
+import { createGlobalStyle } from 'styled-components';
 import '../../../../../node_modules/normalize.css/normalize.css';
 
 import { fontFace, colors } from '@utils';
@@ -43,17 +42,8 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const BaseLayout = ({ title }) => {
-  return (
-    <>
-      <Helmet>
-        <html lang="pl" />
-        <title>{title}</title>
-      </Helmet>
-
-      <GlobalStyle />
-    </>
-  );
+const BaseLayout = () => {
+  return <GlobalStyle />;
 };
 
 export default BaseLayout;

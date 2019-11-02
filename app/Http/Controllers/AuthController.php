@@ -18,7 +18,10 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->only('name', 'password');
+        $credentials = [
+            'name' => $request->input('login'),
+            'password' => $request->input('password')
+        ];
         
         if ($token = $this->guard()->attempt($credentials)) {
             $user = User::find(Auth::user()->id);

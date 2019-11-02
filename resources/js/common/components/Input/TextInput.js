@@ -96,23 +96,25 @@ class TextInput extends React.Component {
     this.setState({ focused: false });
   };
 
-  handleUpdate = () => {
+  handleUpdate = e => {
     const state = {
       empty: this.ref.value.length === 0,
     };
 
     this.setState(state);
+
+    if (this.props.onChange) this.props.onChange(e);
   };
 
   render() {
     return (
       <StyledInputWrapper>
         <StyledTextInput
-          type="text"
+          type={this.props.type ? this.props.type : 'text'}
           ref={input => (this.ref = input)}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          onChange={this.handleUpdate}
+          onChange={e => this.handleUpdate(e)}
         />
         <StyledInputLabel focused={this.state.focused} empty={this.state.empty}>
           {this.props.label}

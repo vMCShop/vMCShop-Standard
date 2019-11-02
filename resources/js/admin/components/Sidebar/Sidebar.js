@@ -24,8 +24,8 @@ import { colors } from '@utils';
 const PosedSidebar = posed.aside({
   sidebarOpen: {
     width: '270px',
-    delayChildren: 200,
-    staggerChildren: 100,
+    delayChildren: 250,
+    staggerChildren: 50,
   },
   sidebarClosed: {
     width: '85px',
@@ -39,7 +39,8 @@ const StyledSidebar = styled(PosedSidebar)`
   justify-content: space-between;
 
   height: 100vh;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 
   background-color: ${colors.sidebar_background};
 

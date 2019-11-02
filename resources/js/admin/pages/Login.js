@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Container } from '@/common/components/Container';
 import { Card } from '@/common/components/Card';
-import { TextInput, Checkbox } from '@/common/components/Input';
-import { Button } from '@/common/components/Button';
+import { AuthenticationForm } from '@/admin/components/Form';
+
+import { AuthenticationContext } from '@/admin/contexts/AuthenticationContext';
 
 import { media, theme } from '@utils';
 
@@ -57,49 +59,26 @@ const LoginSectionHeader = styled.h1`
   text-align: center;
 `;
 
-const FormGroup = styled.div`
-    width: 80%;
-    
-    margin: 0 0 2em;
-    
-    ${media.tablet`
-        width: 70%;
-    `}
-    
-    ${media.laptop`
-        width: 70%;
-    `}
-    
-    ${media.desktop`
-        width: 70%;
-    `}
-`;
-
 const LogoImage = styled.img`
   width: 50%;
 `;
 
-class Login extends React.Component {
-  render() {
-    return (
-      <LoginBoxWrapper>
-        <StyledContainer>
-          <LoginBox>
-            <LogoImage src={logo} alt="logo" />
-            <LoginSectionHeader>Logowanie do ACP</LoginSectionHeader>
-            <FormGroup>
-              <TextInput label="Login" />
-              <TextInput label="Hasło" />
-              <Checkbox color="info" label="Zapamiętaj mnie" />
-            </FormGroup>
-            <Button size="lg" color="success">
-              Zaloguj
-            </Button>
-          </LoginBox>
-        </StyledContainer>
-      </LoginBoxWrapper>
-    );
-  }
-}
+const Login = () => {
+  const { isAuthenticated } = useContext(AuthenticationContext);
+
+  if (isAuthenticated) return <Redirect to="/admin/dashboard" />;
+
+  return (
+    <LoginBoxWrapper>
+      <StyledContainer>
+        <LoginBox>
+          <LogoImage src={logo} alt="logo" />
+          <LoginSectionHeader>Logowanie do ACP</LoginSectionHeader>
+          <AuthenticationForm />
+        </LoginBox>
+      </StyledContainer>
+    </LoginBoxWrapper>
+  );
+};
 
 export default Login;

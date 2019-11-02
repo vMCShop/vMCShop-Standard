@@ -9,7 +9,9 @@ import SeparatorMenuItem from '@/admin/components/Sidebar/SeparatorMenuItem';
 
 import { colors, theme } from '@utils';
 
-const StyledMenu = styled.nav``;
+const StyledMenu = styled.nav`
+  overflow: hidden;
+`;
 
 const StyledList = styled.ul`
   list-style: none;
