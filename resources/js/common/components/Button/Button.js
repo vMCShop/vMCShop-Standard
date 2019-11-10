@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import darken from '@bit/styled-components.polished.color.darken';
@@ -7,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BaseButton from '@/common/components/Button/BaseButton';
 import { Ripple } from '@/common/components/Ripple';
 
-import { colors } from '@utils';
+import { theme, colors } from '@utils';
 
 const StyledButton = styled(BaseButton)`
     padding: 6px 16px;
 
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: ${theme.fontSizeBase};
+    font-weight: ${theme.fontWeightBold};
     line-height: 1.75;
 
     color: ${colors.black};
@@ -150,21 +151,38 @@ const StyledButton = styled(BaseButton)`
     `}
 `;
 
-const Button = props => {
-  let size = '';
-
-  if (props.size === 'lg') {
-    size = '';
-  }
-
+const Button = ({ children, size, color, withLeftIcon, withRightIcon, disabled }) => {
   return (
-    <StyledButton {...props}>
-      {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} transform={size} /> : ''}
-      {props.children}
-      {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} transform={size} /> : ''}
-      {props.disabled ? '' : <Ripple />}
+    <StyledButton
+      size={size}
+      color={color}
+      withLeftIcon={withLeftIcon}
+      withRightIcon={withRightIcon}
+      disabled={disabled}
+    >
+      {withLeftIcon && <FontAwesomeIcon icon={withLeftIcon} />}
+      {children}
+      {withRightIcon && <FontAwesomeIcon icon={withRightIcon} />}
+      {!disabled && <Ripple />}
     </StyledButton>
   );
+};
+
+Button.defaultProps = {
+  size: 'md',
+  color: 'default',
+  withLeftIcon: null,
+  withRightIcon: null,
+  disabled: false,
+};
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'success', 'danger', 'warning', 'info']),
+  withLeftIcon: PropTypes.object,
+  withRightIcon: PropTypes.object,
+  disabled: PropTypes.bool,
 };
 
 export default Button;

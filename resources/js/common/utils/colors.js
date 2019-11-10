@@ -15,4 +15,8 @@ export default {
   white: '#ffffff',
   black: '#000000',
   gray: '#777777',
+
+  fontDefault: 'rgba(0, 0, 0, 0.87)',
+
+  border: 'rgba(0, 0, 0, 0.08)',
 };

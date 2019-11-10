@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import rgba from '@bit/styled-components.polished.color.rgba';
@@ -152,15 +153,38 @@ const StyledOutlinedButton = styled(BaseButton)`
     `}
 `;
 
-const OutlinedButton = props => {
+const OutlinedButton = ({ children, size, color, withLeftIcon, withRightIcon, disabled }) => {
   return (
-    <StyledOutlinedButton {...props}>
-      {props.withLeftIcon ? <FontAwesomeIcon icon={props.withLeftIcon} /> : ''}
-      {props.children}
-      {props.withRightIcon ? <FontAwesomeIcon icon={props.withRightIcon} /> : ''}
-      {props.disabled ? '' : <Ripple />}
+    <StyledOutlinedButton
+      size={size}
+      color={color}
+      withLeftIcon={withLeftIcon}
+      withRightIcon={withRightIcon}
+      disabled={disabled}
+    >
+      {withLeftIcon && <FontAwesomeIcon icon={withLeftIcon} />}
+      {children}
+      {withRightIcon && <FontAwesomeIcon icon={withRightIcon} />}
+      {!disabled && <Ripple />}
     </StyledOutlinedButton>
   );
+};
+
+OutlinedButton.defaultProps = {
+  size: 'md',
+  color: 'default',
+  withLeftIcon: null,
+  withRightIcon: null,
+  disabled: false,
+};
+
+OutlinedButton.propTypes = {
+  children: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'success', 'danger', 'warning', 'info']),
+  withLeftIcon: PropTypes.object,
+  withRightIcon: PropTypes.object,
+  disabled: PropTypes.bool,
 };
 
 export default OutlinedButton;
