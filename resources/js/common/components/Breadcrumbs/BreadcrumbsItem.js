@@ -53,4 +53,14 @@ const BreadcrumbsItem = ({ children, to, external }) => {
   );
 };
 
+BreadcrumbsItem.defaultProps = {
+  external: true,
+};
+
+BreadcrumbsItem.propTypes = {
+  children: PropTypes.any.isRequired,
+  to: PropTypes.string.isRequired,
+  external: PropTypes.bool,
+};
+
 export default BreadcrumbsItem;

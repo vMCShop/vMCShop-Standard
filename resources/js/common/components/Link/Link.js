@@ -28,22 +28,23 @@ const Link = ({ className, children, to, external, location }) => {
       {children}
     </StyledLink>
   ) : (
-    <StyledLink className={className} to={to} active={location && location.pathname === to}>
+    <StyledLink className={className} to={to} active={location.pathname === to}>
       {children}
     </StyledLink>
   );
 };
 
 Link.defaultProps = {
+  className: '',
   external: false,
 };
 
 Link.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
   to: PropTypes.string.isRequired,
   external: PropTypes.bool,
-  location: PropTypes.string,
+  location: PropTypes.object,
 };
 
 export default withRouter(Link);

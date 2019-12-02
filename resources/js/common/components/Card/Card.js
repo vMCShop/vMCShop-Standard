@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import rgba from '@bit/styled-components.polished.color.rgba';
-
 import { Paper } from '@/common/components/Paper';
-import { StyledCardImage, CardImage, CardContent } from '@/common/components/Card';
+import { StyledCardImage, CardContent } from '@/common/components/Card';
 
-import { theme, colors } from '@utils';
+import { theme } from '@utils';
 
 const Card = styled(Paper)`
   div${StyledCardImage} img {
